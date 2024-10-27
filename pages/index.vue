@@ -56,7 +56,7 @@
         <!-- Nama Pengantin Wanita -->
         <div class="bg-gray-100 p-6 rounded-lg text-center shadow-md flex flex-col items-center justify-center w-full md:w-64 h-64">
           <div>
-            <h3 class="text-2xl font-bold mb-2">Dinna Fuaziah</h3>
+            <h3 class="text-2xl font-bold mb-2">Dinna Fauziah</h3>
             <p class="text-lg">Putri dari Bapak Sardi dan Ibu Katiyem</p>
           </div>
         </div>
