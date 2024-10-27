@@ -24,6 +24,7 @@
       <!-- Konten Utama - Tombol Buka Undangan -->
       <div class="text-center p-10 bg-white bg-opacity-70 rounded-lg shadow-lg z-10">
         <h1 class="text-4xl font-bold mb-4">Undangan Pernikahan</h1>
+        <h5 class="text-2xl font-bold mb-4">Dinna<Icon name="fxemoji:blackheartsuit" />Fendy</h5>
         <p class="text-xl mb-6">Dear, <span class="font-bold">{{ recipientName }}</span></p>
         <!-- Tombol Buka Undangan -->
         <button @click="openInvitation" class="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-700">
@@ -51,9 +52,9 @@
       </div>
 
       <!-- Kontainer untuk nama pengantin dengan card -->
-      <div class="flex items-center justify-center mb-8">
+      <div class="flex flex-col md:flex-row items-center justify-center mb-8 space-y-4 md:space-y-0 md:space-x-4">
         <!-- Nama Pengantin Wanita -->
-        <div class="bg-gray-100 p-6 rounded-lg text-center shadow-md flex flex-col items-center justify-center w-64 h-64">
+        <div class="bg-gray-100 p-6 rounded-lg text-center shadow-md flex flex-col items-center justify-center w-full md:w-64 h-64">
           <div>
             <h3 class="text-2xl font-bold mb-2">Dinna Fuaziah</h3>
             <p class="text-lg">Putri dari Bapak Sardi dan Ibu Katiyem</p>
@@ -66,7 +67,7 @@
         </div>
 
         <!-- Nama Pengantin Pria -->
-        <div class="bg-gray-100 p-6 rounded-lg text-center shadow-md flex flex-col items-center justify-center w-64 h-64">
+        <div class="bg-gray-100 p-6 rounded-lg text-center shadow-md flex flex-col items-center justify-center w-full md:w-64 h-64">
           <div>
             <h3 class="text-2xl font-bold mb-2">Syafei Dwiyoga Arifendy</h3>
             <p class="text-lg">Putra dari Bapak Agus Triyono dan Ibu Suminah</p>
@@ -236,6 +237,16 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
+}
+
+ /* Media Queries for Responsive Text and Spacing */
+ @media (max-width: 768px) {
+    #about-us h2 {
+      font-size: 2.5rem; /* Adjust heading size for smaller screens */
+    }
+    #about-us p {
+      font-size: 1.25rem; /* Adjust paragraph size for smaller screens */
+    }
 }
 
 .bubble-button {
