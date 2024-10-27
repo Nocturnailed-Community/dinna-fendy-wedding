@@ -21,15 +21,19 @@ export default {
           maxZoom: 19,
         }).addTo(map);
 
-        // Create a custom icon using the imported image
-        const customIcon = L.icon({
-          iconUrl: profileImage,
-          iconSize: [50, 50], // Adjust size as needed
-          iconAnchor: [25, 50], // Anchor the icon
+        // Create a circular marker with a custom icon
+        const customIcon = L.divIcon({
+          className: 'circular-marker', // Custom CSS class
+          html: `<img src="${profileImage}" class="marker-image" alt="Location"/>`, // Use the image for the circular marker
+          iconSize: [50, 50], // Size of the icon
+          iconAnchor: [25, 50], // Anchor the icon at the bottom
         });
 
-        // Add the custom marker to the map
-        L.marker([-6.1968929, 106.8774217], { icon: customIcon }).addTo(map);
+        // Add the circular marker to the map
+        const marker = L.marker([-6.1968929, 106.8774217], { icon: customIcon }).addTo(map);
+
+        // Bind a popup with the location name
+        marker.bindPopup("<b>Gelanggang Remaja Pulogadung</b>").openPopup();
       } else {
         console.error("Map container not found.");
       }
@@ -43,5 +47,13 @@ export default {
 </script>
 
 <style scoped>
-/* Add styles for the map container if needed */
+.circular-marker {
+  border-radius: 50%; /* Makes the marker circular */
+  overflow: hidden; /* Ensures the image fits within the circle */
+}
+
+.marker-image {
+  width: 100%; /* Fill the circle */
+  height: auto; /* Maintain aspect ratio */
+}
 </style>
