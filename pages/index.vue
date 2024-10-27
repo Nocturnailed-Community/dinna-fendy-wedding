@@ -24,7 +24,11 @@
       <!-- Konten Utama - Tombol Buka Undangan -->
       <div class="text-center p-10 bg-white bg-opacity-70 rounded-lg shadow-lg z-10">
         <div class="mb-8 flex justify-center">
-          <img src="@/assets/images/ornamen/gunungan.png" alt="Gunungan" class="w-full h-auto rounded-lg" />
+          <img 
+            src="@/assets/ornamen/gunungan.png" 
+            alt="Gunungan" 
+            class="w-2/3 h-auto rounded-lg" 
+          />
         </div>
         <h1 class="text-4xl font-bold mb-4">Undangan Pernikahan</h1>
         <h5 class="text-2xl font-bold mb-4">Dinna<Icon name="fxemoji:blackheartsuit" />Fendy</h5>
