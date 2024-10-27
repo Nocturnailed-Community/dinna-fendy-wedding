@@ -1,33 +1,42 @@
 <template>
-  <div id="map" class="w-full h-96 rounded-lg shadow-lg"></div>
+  <div ref="map" class="h-96"></div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue';
+<script>
+import { onMounted, ref } from 'vue';
 import L from 'leaflet';
+import profileImage from '@/assets/images/profile/profile.jpeg'; // Import your custom image
 
-// Define the coordinates for the location
-const locationCoordinates = [-6.191348462459264, 106.87974461612943];
+export default {
+  setup() {
+    const mapRef = ref(null);
+    
+    onMounted(() => {
+      const map = L.map(mapRef.value).setView([-6.1968929, 106.8774217], 15); // Set your coordinates
 
-onMounted(() => {
-  // Initialize the map
-  const map = L.map('map').setView(locationCoordinates, 15);
+      // Add tile layer (you can use any tile layer provider)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+      }).addTo(map);
 
-  // Add OpenStreetMap tiles
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(map);
+      // Create a custom icon using the imported image
+      const customIcon = L.icon({
+        iconUrl: profileImage,
+        iconSize: [50, 50], // Adjust size as needed
+        iconAnchor: [25, 50], // Anchor the icon
+      });
 
-  // Add a marker
-  const marker = L.marker(locationCoordinates).addTo(map);
-  marker.bindPopup("<b>Gedung Gelanggang Remaja Pulogadung</b><br>Jl. Raya Pemuda No.17").openPopup();
-});
+      // Add the custom marker to the map
+      L.marker([-6.1968929, 106.8774217], { icon: customIcon }).addTo(map);
+    });
+
+    return {
+      mapRef,
+    };
+  },
+};
 </script>
 
 <style scoped>
-#map {
-  height: 400px; /* Ensure the map has height */
-  width: 100%;   /* Full width */
-}
+/* Add styles for the map container if needed */
 </style>
