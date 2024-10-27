@@ -49,139 +49,16 @@
     </div>
 
     <!-- Section 2: Tentang Pengantin -->
-    <div id="about-us" class="min-h-screen flex items-center justify-center p-10 relative">
-  <div class="z-10 max-w-3xl w-full">
-    <!-- Card Container -->
-    <div class="bg-white shadow-lg rounded-lg p-8">
-      <h2 class="text-3xl font-bold mb-6 text-center">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
-      <p class="text-xl mb-8 text-center">Assalamualaikum Warahmatullahi Wabarakatuh</p>
-      <p class="text-xl mb-8 text-center">Dengan memohon Rahmat dan Ridho Illahi, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a agar senantiasa diberikan kelancaran dan keberkahan.</p>
-      
-      <!-- Image Above Names -->
-      <div class="mb-8 flex justify-center">
-        <img src="@/assets/images/profile/profile.jpeg" alt="Profile" class="w-full h-auto rounded-lg" loading="lazy" />
-      </div>
-
-      <!-- Kontainer untuk nama pengantin dengan card -->
-      <div class="flex flex-col md:flex-row items-center justify-center mb-8 space-y-4 md:space-y-0 md:space-x-4">
-        <!-- Nama Pengantin Wanita -->
-        <div class="bg-gray-100 p-6 rounded-lg text-center shadow-md flex flex-col items-center justify-center w-full md:w-64 h-64">
-          <div>
-            <h3 class="text-2xl font-bold mb-2">Dinna Fauziah</h3>
-            <p class="text">Putri dari Bapak Sardi dan Ibu Katiyem</p>
-          </div>
-        </div>
-
-        <!-- Ikon Love di tengah -->
-        <div class="mx-4 flex items-center justify-center">
-          <Icon name="fxemoji:blackheartsuit" class="text-5xl" />
-        </div>
-
-        <!-- Nama Pengantin Pria -->
-        <div class="bg-gray-100 p-6 rounded-lg text-center shadow-md flex flex-col items-center justify-center w-full md:w-64 h-64">
-          <div>
-            <h3 class="text-2xl font-bold mb-2">Syafei Dwiyoga Arifendy</h3>
-            <p class="text">Putra dari Bapak Agus Triyono dan Ibu Suminah</p>
-          </div>
-        </div>
-      </div>
-
-      <p class="text-lg text-center">Kami sangat menantikan kehadiran dan doa restu dari Anda pada hari bahagia kami.</p>
-    </div>
-  </div>
-</div>
-
+    <About />
 
     <!-- Section 3: Tanggal Pernikahan -->
-    <div id="wedding-date" class="min-h-screen flex items-center justify-center p-10 relative">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 z-10">
-        <!-- Card Akad -->
-        <div class="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
-          <h2 class="text-2xl font-bold mb-2">Akad Nikah</h2>
-          <p class="text-xl mb-4">Minggu, 22 Desember 2024</p>
-          <p class="text-lg font-bold">08.00 - 10.00 WIB</p>
-        </div>
-
-        <!-- Card Resepsi -->
-        <div class="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
-          <h2 class="text-2xl font-bold mb-2">Resepsi Pernikahan</h2>
-          <p class="text-xl mb-4">Minggu, 22 Desember 2024</p>
-          <p class="text-lg font-bold">11.00 - 17.00 WIB</p>
-        </div>
-      </div>
-    </div>
-
+    <Date />
 
     <!-- Section 4: Lokasi Pernikahan -->
-    <div id="location" class="min-h-screen flex flex-col items-center justify-center p-10 relative">
-    <div class="z-10 w-full max-w-4xl">
-      <!-- Card Container -->
-      <div class="bg-white shadow-lg rounded-lg p-8">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl font-bold mb-4">Lokasi Acara</h2>
-          <p class="text-xl">Gedung Gelanggang Remaja Pulogadung</p>
-          <p class="text-lg">Jl. Raya Pemuda No.17, Rawamangun, Kec. Pulogadung, Jakarta Timur, DKI Jakarta 13220</p>
-        </div>
-
-        <!-- Leaflet Map Component -->
-        <Map />
-
-        <!-- Tombol Lihat Rute -->
-        <div class="flex justify-center mt-6">
-          <a 
-            href="https://www.google.com/maps/dir/?api=1&destination=Gedung+Gelanggang+Remaja+Pulogadung,+Jl.+Raya+Pemuda+No.17,+Jakarta+Timur" 
-            target="_blank" 
-            class="inline-block bg-blue-500 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition">
-            Lihat Lokasi
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+    <Address />    
 
     <!-- Section 5: Galeri Foto -->
-    <div id="gallery" class="min-h-screen flex flex-col items-center justify-center p-10 relative">
-      <div class="z-10 w-full max-w-5xl">
-        <!-- Card Container for the Gallery -->
-        <h2 class="text-3xl font-bold mb-8 text-center">Pre Wedding</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
-          <!-- Card for each photo -->
-          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (1).jpeg" alt="Gallery Photo 1" class="w-full h-auto" loading="lazy" />
-          </div>
-          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (2).jpeg" alt="Gallery Photo 2" class="w-full h-auto" loading="lazy" />
-          </div>
-          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (3).jpeg" alt="Gallery Photo 3" class="w-full h-auto" loading="lazy" />
-          </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
-          <!-- Card for each photo -->
-          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (4).jpeg" alt="Gallery Photo 4" class="w-full h-auto" loading="lazy" />
-          </div>
-          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (5).jpeg" alt="Gallery Photo 5" class="w-full h-auto" loading="lazy" />
-          </div>
-          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (6).jpeg" alt="Gallery Photo 6" class="w-full h-auto" loading="lazy" />
-          </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <!-- Card for each photo -->
-          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (7).jpeg" alt="Gallery Photo 7" class="w-full h-auto" loading="lazy" />
-          </div>
-          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (8).jpeg" alt="Gallery Photo 8" class="w-full h-auto" loading="lazy" />
-          </div>
-          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (9).jpeg" alt="Gallery Photo 9" class="w-full h-auto" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <Gallery />
 
     <!-- Section 6: Doa -->
     <div id="thank-you" class="min-h-screen flex items-center justify-center p-10 relative">
@@ -215,11 +92,17 @@
 
 <script>
 import audioFile from "@/assets/audio/pernikahan_impian.mp3";
-import Map from '../components/Features/Map.vue'; // Import the Map component
+import About from '../components/Wedding/About.vue'; // Import the About component
+import Address from '../components/Wedding/Address.vue'; // Import the Address component
+import Date from '../components/Wedding/Date.vue'; // Import the Date component
+import Gallery from '../components/Wedding/Gallery.vue'; // Import the Gallery component
 
 export default {
   components: {
-    Map,
+    About,
+    Address,
+    Date,
+    Gallery,
   },
   data() {
     return {
@@ -227,14 +110,17 @@ export default {
       audioSrc: audioFile,
       googleMapsUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.7385220819967!2d106.87742173183104!3d-6.196892929221758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4bfae19c195%3A0x78be20a8eac2ec5f!2sGelanggang%20Remaja%20Pulogadung!5e0!3m2!1sen!2sid!4v1698384169637!5m2!1sen!2sid',
       invitationOpened: false,
-      isPlaying: false // Tambahkan status untuk memantau apakah audio sedang dimainkan
+      isPlaying: false // Status untuk memantau apakah audio sedang dimainkan
     }
   },
   
   mounted() {
-    this.recipientName = this.$route.query.name || 'Guest';
-    if (!this.invitationOpened) {
-      document.body.style.overflow = 'hidden'; // Kunci scroll
+    // Ensure we're in a client environment
+    if (process.client) {
+      this.recipientName = this.$route.query.name || 'Guest';
+      if (!this.invitationOpened) {
+        document.body.style.overflow = 'hidden'; // Kunci scroll
+      }
     }
   },
 
@@ -242,11 +128,15 @@ export default {
     openInvitation() {
       this.playMusic(); // Saat undangan dibuka, musik akan mulai diputar
       this.invitationOpened = true;
-      document.body.style.overflow = 'auto'; // Buka scroll
+      
+      // Ensure we're in a client environment
+      if (process.client) {
+        document.body.style.overflow = 'auto'; // Buka scroll
 
-      const aboutSection = document.getElementById('about-us');
-      if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: 'smooth' });
+        const aboutSection = document.getElementById('about-us');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     },
     playMusic() {
