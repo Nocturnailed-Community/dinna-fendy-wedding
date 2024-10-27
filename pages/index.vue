@@ -32,6 +32,7 @@
         </div>
         <h1 class="text-4xl font-bold mb-4">Undangan Pernikahan</h1>
         <h5 class="text-2xl font-bold mb-4">Dinna<Icon name="fxemoji:blackheartsuit" />Fendy</h5>
+        <h5 class="text-2xl font-bold mb-4">22 • 12 • 2024</h5>
         <p class="text-xl mb-6">Kepada Yth, <span class="font-bold">{{ recipientName }}</span></p>
         <!-- Tombol Buka Undangan -->
         <button 
