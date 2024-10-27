@@ -61,32 +61,14 @@
     <Gallery />
 
     <!-- Section 6: Doa -->
-    <div id="thank-you" class="min-h-screen flex items-center justify-center p-10 relative">
-      <div class="bg-white shadow-lg rounded-lg p-8">
-        <div class="text-center z-10">
-          <p class="text-xl">"Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."</p>
-          <strong class="text-xl">Ar-Rum · Ayat 21</strong>
-        </div>
-      </div>
-    </div>
-
+    <Doa />
+    
     <!-- Section 7: Ucapan Terima Kasih -->
-    <div id="thank-you" class="min-h-screen flex items-center justify-center p-10 relative">
-      <div class="bg-white shadow-lg rounded-lg p-8">
-        <div class="text-center z-10">
-          <h2 class="text-3xl font-bold mb-4">Terima Kasih</h2>
-          <p class="text-xl">Atas segala do'a dan restu saudara/i, kami ucapkan terima kasih.</p>
-          <p class="text-xl">Wassalamualaikum Warahmatullahi Wabarakatuh.</p>
-        </div>
-      </div>
-    </div>
-
+    <ThankYou />
+    
     <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white text-center py-4">
-      <p class="text-sm">© 2024 | Dinna & Fendy Wedding. All rights reserved.</p>
-      <!-- <p class="text-sm">Song by <a href="" target="_blank" class="hover:text-gray-300"><strong>Nocturnailed</strong></a></p> -->
-      <p class="text-sm">Created and Design by <a href="https://www.instagram.com/nocturnailed.team/" target="_blank" class="hover:text-gray-300"><strong>Nocturnailed</strong></a></p>
-    </footer>
+    <Footer />
+
   </div>
 </template>
 
@@ -96,6 +78,9 @@ import About from '../components/Wedding/About.vue'; // Import the About compone
 import Address from '../components/Wedding/Address.vue'; // Import the Address component
 import Date from '../components/Wedding/Date.vue'; // Import the Date component
 import Gallery from '../components/Wedding/Gallery.vue'; // Import the Gallery component
+import Doa from '../components/Wedding/Doa.vue'; // Import the Doa component
+import ThankYou from '../components/Wedding/ThankYou.vue'; // Import the ThankYou component
+import Footer from '../components/Wedding/Footer.vue'; // Import the Footer component
 
 export default {
   components: {
@@ -103,6 +88,9 @@ export default {
     Address,
     Date,
     Gallery,
+    Doa,
+    ThankYou,
+    Footer,
   },
   data() {
     return {
@@ -118,8 +106,9 @@ export default {
     // Ensure we're in a client environment
     if (process.client) {
       this.recipientName = this.$route.query.name || 'Guest';
+      // Allow scrolling by default on mobile
       if (!this.invitationOpened) {
-        document.body.style.overflow = 'hidden'; // Kunci scroll
+        document.body.classList.add('no-scroll'); // Add class to prevent scrolling
       }
     }
   },
@@ -131,7 +120,7 @@ export default {
       
       // Ensure we're in a client environment
       if (process.client) {
-        document.body.style.overflow = 'auto'; // Buka scroll
+        document.body.classList.remove('no-scroll'); // Remove class to allow scrolling
 
         const aboutSection = document.getElementById('about-us');
         if (aboutSection) {
@@ -172,14 +161,19 @@ html, body {
   font-family: 'Arial', sans-serif;
 }
 
- /* Media Queries for Responsive Text and Spacing */
- @media (max-width: 768px) {
-    #about-us h2 {
-      font-size: 2.5rem; /* Adjust heading size for smaller screens */
-    }
-    #about-us p {
-      font-size: 1.25rem; /* Adjust paragraph size for smaller screens */
-    }
+/* Prevent scrolling with class */
+.no-scroll {
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Media Queries for Responsive Text and Spacing */
+@media (max-width: 768px) {
+  #about-us h2 {
+    font-size: 2.5rem; /* Adjust heading size for smaller screens */
+  }
+  #about-us p {
+    font-size: 1.25rem; /* Adjust paragraph size for smaller screens */
+  }
 }
 
 .bubble-button {
