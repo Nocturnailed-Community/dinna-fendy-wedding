@@ -25,8 +25,8 @@ export default {
         const customIcon = L.divIcon({
           className: 'circular-marker', // Custom CSS class
           html: `<img src="${profileImage}" class="marker-image" alt="Location"/>`, // Use the image for the circular marker
-          iconSize: [50, 50], // Size of the icon
-          iconAnchor: [25, 50], // Anchor the icon at the bottom
+          iconSize: [40, 40], // Adjust the size of the icon
+          iconAnchor: [20, 40], // Anchor the icon at the bottom
         });
 
         // Add the circular marker to the map
@@ -50,6 +50,8 @@ export default {
 .circular-marker {
   border-radius: 50%; /* Makes the marker circular */
   overflow: hidden; /* Ensures the image fits within the circle */
+  width: 40px; /* Set a specific width */
+  height: 40px; /* Set a specific height */
 }
 
 .marker-image {
