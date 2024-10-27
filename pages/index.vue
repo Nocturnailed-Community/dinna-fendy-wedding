@@ -23,6 +23,9 @@
     <div class="min-h-screen flex items-center justify-center bg-cover bg-center">
       <!-- Konten Utama - Tombol Buka Undangan -->
       <div class="text-center p-10 bg-white bg-opacity-70 rounded-lg shadow-lg z-10">
+        <div class="mb-8 flex justify-center">
+          <img src="@/assets/images/ornamen/gunungan.png" alt="Gunungan" class="w-full h-auto rounded-lg" />
+        </div>
         <h1 class="text-4xl font-bold mb-4">Undangan Pernikahan</h1>
         <h5 class="text-2xl font-bold mb-4">Dinna<Icon name="fxemoji:blackheartsuit" />Fendy</h5>
         <p class="text-xl mb-6">Dear, <span class="font-bold">{{ recipientName }}</span></p>
@@ -48,7 +51,7 @@
       
       <!-- Image Above Names -->
       <div class="mb-8 flex justify-center">
-        <img src="@/assets/images/profile/profile.png" alt="Banner" class="w-full h-auto rounded-lg" />
+        <img src="@/assets/images/profile/profile.jpeg" alt="Banner" class="w-full h-auto rounded-lg" />
       </div>
 
       <!-- Kontainer untuk nama pengantin dengan card -->
@@ -129,7 +132,7 @@
               href="https://www.google.com/maps/dir/?api=1&destination=Gedung+Gelanggang+Remaja+Pulogadung,+Jl.+Raya+Pemuda+No.17,+Jakarta+Timur" 
               target="_blank" 
               class="inline-block bg-blue-500 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition">
-              Lihat Rute di Google Maps
+              Lihat Lokasi
             </a>
           </div>
         </div>
@@ -141,16 +144,40 @@
       <div class="z-10 w-full max-w-5xl">
         <!-- Card Container for the Gallery -->
         <h2 class="text-3xl font-bold mb-8 text-center">Pre Wedding</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+          <!-- Card for each photo -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="@/assets/images/gallery/images (1).jpeg" alt="Gallery Photo 1" class="w-full h-auto" />
+          </div>
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="@/assets/images/gallery/images (2).jpeg" alt="Gallery Photo 2" class="w-full h-auto" />
+          </div>
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="@/assets/images/gallery/images (3).jpeg" alt="Gallery Photo 3" class="w-full h-auto" />
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+          <!-- Card for each photo -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="@/assets/images/gallery/images (4).jpeg" alt="Gallery Photo 4" class="w-full h-auto" />
+          </div>
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="@/assets/images/gallery/images (5).jpeg" alt="Gallery Photo 5" class="w-full h-auto" />
+          </div>
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="@/assets/images/gallery/images (6).jpeg" alt="Gallery Photo 6" class="w-full h-auto" />
+          </div>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <!-- Card for each photo -->
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/gallery1.png" alt="Gallery Photo 1" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (7).jpeg" alt="Gallery Photo 7" class="w-full h-auto" />
           </div>
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/gallery2.png" alt="Gallery Photo 2" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (8).jpeg" alt="Gallery Photo 8" class="w-full h-auto" />
           </div>
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/gallery3.png" alt="Gallery Photo 3" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (9).jpeg" alt="Gallery Photo 9" class="w-full h-auto" />
           </div>
         </div>
       </div>
