@@ -36,7 +36,7 @@ export default {
         <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <b>Gelanggang Remaja Pulogadung</b>
             <br>
-            <img src="${profileImage}" style="width: 100px; height: 100px;" alt="Location Image" />
+            <img src="${profileImage}" style="width: 150px; height: 100px;" alt="Location Image" />
           </div>
         `).openPopup();
       } else {
