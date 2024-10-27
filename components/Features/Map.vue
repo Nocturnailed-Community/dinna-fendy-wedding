@@ -35,7 +35,6 @@ export default {
         marker.bindPopup(`
         <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <b>Gedung Gelanggang</b>
-            <br>
             <b>Remaja Pulogadung</b>
             <br>
             <img src="${profileImage}" style="width: 150px; height: 100px;" alt="Location Image" />
