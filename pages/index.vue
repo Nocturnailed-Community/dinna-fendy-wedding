@@ -32,9 +32,12 @@
         </div>
         <h1 class="text-4xl font-bold mb-4">Undangan Pernikahan</h1>
         <h5 class="text-2xl font-bold mb-4">Dinna<Icon name="fxemoji:blackheartsuit" />Fendy</h5>
-        <p class="text-xl mb-6">Dear, <span class="font-bold">{{ recipientName }}</span></p>
+        <p class="text-xl mb-6">Kepada Yth, <span class="font-bold">{{ recipientName }}</span></p>
         <!-- Tombol Buka Undangan -->
-        <button @click="openInvitation" class="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-700">
+        <button 
+          @click="openInvitation" 
+          class="bg-[#C7A07A] text-white px-4 py-2 rounded-lg hover:bg-[#734128]"
+        >
           Buka Undangan
         </button>
       </div>
@@ -50,8 +53,9 @@
   <div class="z-10 max-w-3xl w-full">
     <!-- Card Container -->
     <div class="bg-white shadow-lg rounded-lg p-8">
-      <h2 class="text-3xl font-bold mb-6 text-center">Tentang Pengantin</h2>
-      <p class="text-xl mb-8 text-center">Dengan rasa syukur, kami mempersembahkan pernikahan kami yang dipersatukan oleh cinta:</p>
+      <h2 class="text-3xl font-bold mb-6 text-center">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+      <p class="text-xl mb-8 text-center">Assalamualaikum Warahmatullahi Wabarakatuh</p>
+      <p class="text-xl mb-8 text-center">Dengan memohon Rahmat dan Ridho Illahi, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a agar senantiasa diberikan kelancaran dan keberkahan.</p>
       
       <!-- Image Above Names -->
       <div class="mb-8 flex justify-center">
@@ -64,7 +68,7 @@
         <div class="bg-gray-100 p-6 rounded-lg text-center shadow-md flex flex-col items-center justify-center w-full md:w-64 h-64">
           <div>
             <h3 class="text-2xl font-bold mb-2">Dinna Fauziah</h3>
-            <p class="text-lg">Putri dari Bapak Sardi dan Ibu Katiyem</p>
+            <p class="text">Putri dari Bapak Sardi dan Ibu Katiyem</p>
           </div>
         </div>
 
@@ -77,7 +81,7 @@
         <div class="bg-gray-100 p-6 rounded-lg text-center shadow-md flex flex-col items-center justify-center w-full md:w-64 h-64">
           <div>
             <h3 class="text-2xl font-bold mb-2">Syafei Dwiyoga Arifendy</h3>
-            <p class="text-lg">Putra dari Bapak Agus Triyono dan Ibu Suminah</p>
+            <p class="text">Putra dari Bapak Agus Triyono dan Ibu Suminah</p>
           </div>
         </div>
       </div>
@@ -187,19 +191,32 @@
       </div>
     </div>
 
-    <!-- Section 6: Ucapan Terima Kasih -->
+    <!-- Section 6: Doa -->
+    <div id="thank-you" class="min-h-screen flex items-center justify-center p-10 relative">
+      <div class="bg-white shadow-lg rounded-lg p-8">
+        <div class="text-center z-10">
+          <p class="text-xl">"Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."</p>
+          <strong class="text-xl">Ar-Rum · Ayat 21</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 7: Ucapan Terima Kasih -->
     <div id="thank-you" class="min-h-screen flex items-center justify-center p-10 relative">
       <div class="bg-white shadow-lg rounded-lg p-8">
         <div class="text-center z-10">
           <h2 class="text-3xl font-bold mb-4">Terima Kasih</h2>
-          <p class="text-xl">Kami sangat berterima kasih atas doa dan kehadiran Anda di hari bahagia kami.</p>
+          <p class="text-xl">Atas segala do'a dan restu saudara/i, kami ucapkan terima kasih.</p>
+          <p class="text-xl">Wassalamualaikum Warahmatullahi Wabarakatuh.</p>
         </div>
       </div>
     </div>
 
     <!-- Footer Section -->
     <footer class="bg-gray-800 text-white text-center py-4">
-      <p class="text-sm">Created and Design by <a href="https://www.instagram.com/nocturnailed.team/" target="_blank" class="hover:text-gray-300">Nocturnailed</a></p>
+      <p class="text-sm">© 2024 | Dinna & Fendy Wedding. All rights reserved.</p>
+      <!-- <p class="text-sm">Song by <a href="" target="_blank" class="hover:text-gray-300"><strong>Nocturnailed</strong></a></p> -->
+      <p class="text-sm">Created and Design by <a href="https://www.instagram.com/nocturnailed.team/" target="_blank" class="hover:text-gray-300"><strong>Nocturnailed</strong></a></p>
     </footer>
   </div>
 </template>
@@ -236,7 +253,6 @@ export default {
         aboutSection.scrollIntoView({ behavior: 'smooth' });
       }
     },
-    
     playMusic() {
       this.$refs.audio.play()
         .then(() => {
@@ -286,7 +302,7 @@ html, body {
   right: 20px;
   width: 60px;
   height: 60px;
-  background-color: #ff4081;
+  background-color: #C7A07A;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -300,7 +316,7 @@ html, body {
 }
 
 .bubble-button:hover {
-  background-color: #e91e63;
+  background-color: #734128;
 }
 
 </style>

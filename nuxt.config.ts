@@ -31,6 +31,9 @@ export default defineNuxtConfig({
       }
     }
   },
-  css: ['@/assets/css/tailwind.css'],
+  css: [
+    '@/assets/css/tailwind.css', // Import Tailwind CSS globally
+    'leaflet/dist/leaflet.css', // Import Leaflet CSS globally
+  ],
   modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@vueuse/motion/nuxt'],
 })
