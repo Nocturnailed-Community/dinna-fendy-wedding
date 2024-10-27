@@ -32,8 +32,14 @@ export default {
         // Add the circular marker to the map
         const marker = L.marker([-6.1968929, 106.8774217], { icon: customIcon }).addTo(map);
 
-        // Bind a popup with the location name
-        marker.bindPopup("<b>Gelanggang Remaja Pulogadung</b>").openPopup();
+        // Bind a popup with the location name and image
+        marker.bindPopup(`
+          <div style="text-align: center;">
+            <b>Gelanggang Remaja Pulogadung</b>
+            <br>
+            <img src="${profileImage}" style="width: 50px; height: 50px; border-radius: 50%;" alt="Location Image" />
+          </div>
+        `).openPopup();
       } else {
         console.error("Map container not found.");
       }
