@@ -59,7 +59,7 @@
       
       <!-- Image Above Names -->
       <div class="mb-8 flex justify-center">
-        <img src="@/assets/images/profile/profile.jpeg" alt="Banner" class="w-full h-auto rounded-lg" />
+        <img src="@/assets/images/profile/profile.jpeg" alt="Profile" class="w-full h-auto rounded-lg" loading="lazy" />
       </div>
 
       <!-- Kontainer untuk nama pengantin dengan card -->
@@ -114,38 +114,30 @@
 
     <!-- Section 4: Lokasi Pernikahan -->
     <div id="location" class="min-h-screen flex flex-col items-center justify-center p-10 relative">
-      <div class="z-10 w-full max-w-4xl">
-        <!-- Card Container -->
-        <div class="bg-white shadow-lg rounded-lg p-8">
-          <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold mb-4">Lokasi Acara</h2>
-            <p class="text-xl">Gedung Gelanggang Remaja Pulogadung</p>
-            <p class="text-lg">Jl. Raya Pemuda No.17, Rawamangun, Kec. Pulogadung, Jakarta Timur, DKI Jakarta 13220</p>
-          </div>
+    <div class="z-10 w-full max-w-4xl">
+      <!-- Card Container -->
+      <div class="bg-white shadow-lg rounded-lg p-8">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold mb-4">Lokasi Acara</h2>
+          <p class="text-xl">Gedung Gelanggang Remaja Pulogadung</p>
+          <p class="text-lg">Jl. Raya Pemuda No.17, Rawamangun, Kec. Pulogadung, Jakarta Timur, DKI Jakarta 13220</p>
+        </div>
 
-          <!-- Google Maps Embed -->
-          <div class="w-full flex justify-center mb-6">
-            <iframe 
-              class="w-full h-64 md:w-3/4 md:h-96 rounded-lg shadow-lg" 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.606968987313!2d106.87974461612943!3d-6.191348462459264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4d11f38c6df%3A0x1c259ec5e1584b7b!2sGelanggang%20Remaja%20Pulogadung!5e0!3m2!1sen!2sid!4v1634835703406!5m2!1sen!2sid" 
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+        <!-- Leaflet Map Component -->
+        <Map />
 
-          <!-- Tombol Lihat Rute -->
-          <div class="flex justify-center">
-            <a 
-              href="https://www.google.com/maps/dir/?api=1&destination=Gedung+Gelanggang+Remaja+Pulogadung,+Jl.+Raya+Pemuda+No.17,+Jakarta+Timur" 
-              target="_blank" 
-              class="inline-block bg-blue-500 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition">
-              Lihat Lokasi
-            </a>
-          </div>
+        <!-- Tombol Lihat Rute -->
+        <div class="flex justify-center mt-6">
+          <a 
+            href="https://www.google.com/maps/dir/?api=1&destination=Gedung+Gelanggang+Remaja+Pulogadung,+Jl.+Raya+Pemuda+No.17,+Jakarta+Timur" 
+            target="_blank" 
+            class="inline-block bg-blue-500 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition">
+            Lihat Lokasi
+          </a>
         </div>
       </div>
     </div>
+  </div>
 
     <!-- Section 5: Galeri Foto -->
     <div id="gallery" class="min-h-screen flex flex-col items-center justify-center p-10 relative">
@@ -155,37 +147,37 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
           <!-- Card for each photo -->
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (1).jpeg" alt="Gallery Photo 1" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (1).jpeg" alt="Gallery Photo 1" class="w-full h-auto" loading="lazy" />
           </div>
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (2).jpeg" alt="Gallery Photo 2" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (2).jpeg" alt="Gallery Photo 2" class="w-full h-auto" loading="lazy" />
           </div>
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (3).jpeg" alt="Gallery Photo 3" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (3).jpeg" alt="Gallery Photo 3" class="w-full h-auto" loading="lazy" />
           </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
           <!-- Card for each photo -->
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (4).jpeg" alt="Gallery Photo 4" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (4).jpeg" alt="Gallery Photo 4" class="w-full h-auto" loading="lazy" />
           </div>
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (5).jpeg" alt="Gallery Photo 5" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (5).jpeg" alt="Gallery Photo 5" class="w-full h-auto" loading="lazy" />
           </div>
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (6).jpeg" alt="Gallery Photo 6" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (6).jpeg" alt="Gallery Photo 6" class="w-full h-auto" loading="lazy" />
           </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <!-- Card for each photo -->
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (7).jpeg" alt="Gallery Photo 7" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (7).jpeg" alt="Gallery Photo 7" class="w-full h-auto" loading="lazy" />
           </div>
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (8).jpeg" alt="Gallery Photo 8" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (8).jpeg" alt="Gallery Photo 8" class="w-full h-auto" loading="lazy" />
           </div>
           <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="@/assets/images/gallery/images (9).jpeg" alt="Gallery Photo 9" class="w-full h-auto" />
+            <img src="@/assets/images/gallery/images (9).jpeg" alt="Gallery Photo 9" class="w-full h-auto" loading="lazy" />
           </div>
         </div>
       </div>
@@ -223,8 +215,12 @@
 
 <script>
 import audioFile from "@/assets/audio/pernikahan_impian.mp3";
+import Map from '../components/Features/Map.vue'; // Import the Map component
 
 export default {
+  components: {
+    Map,
+  },
   data() {
     return {
       recipientName: '',
