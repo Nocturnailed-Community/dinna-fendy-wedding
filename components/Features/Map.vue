@@ -50,12 +50,17 @@ export default {
 .circular-marker {
   border-radius: 50%; /* Makes the marker circular */
   overflow: hidden; /* Ensures the image fits within the circle */
-  width: 40px; /* Set a specific width */
-  height: 40px; /* Set a specific height */
+  width: 40px; /* Set a specific width for the marker */
+  height: 40px; /* Set a specific height for the marker */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .marker-image {
-  width: 100%; /* Fill the circle */
-  height: auto; /* Maintain aspect ratio */
+  width: 30px; /* Set the image width to fit inside the marker */
+  height: 30px; /* Set the image height to maintain aspect ratio */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensure the image covers the area */
 }
 </style>
