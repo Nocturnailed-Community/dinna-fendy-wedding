@@ -24,7 +24,6 @@ export default {
         // Create a circular marker with a custom icon
         const customIcon = L.divIcon({
           className: 'circular-marker', // Custom CSS class
-          html: `<img src="${profileImage}" class="marker-image" alt="Location"/>`, // Use the image for the circular marker
           iconSize: [40, 40], // Adjust the size of the icon
           iconAnchor: [20, 40], // Anchor the icon at the bottom
         });
@@ -34,10 +33,10 @@ export default {
 
         // Bind a popup with the location name and image
         marker.bindPopup(`
-          <div style="text-align: center;">
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <b>Gelanggang Remaja Pulogadung</b>
             <br>
-            <img src="${profileImage}" style="width: 50px; height: 50px; border-radius: 50%;" alt="Location Image" />
+            <img src="${profileImage}" style="width: 100px; height: 100px;" alt="Location Image" />
           </div>
         `).openPopup();
       } else {
