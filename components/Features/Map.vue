@@ -34,7 +34,9 @@ export default {
         // Bind a popup with the location name and image
         marker.bindPopup(`
         <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <b>Gelanggang Remaja Pulogadung</b>
+            <b>Gedung Gelanggang</b>
+            <br>
+            <b>Remaja Pulogadung</b>
             <br>
             <img src="${profileImage}" style="width: 150px; height: 100px;" alt="Location Image" />
           </div>
