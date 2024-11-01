@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import audioFile from "@/assets/audio/pernikahan_impian.mp3";
+import audioFile from "@/assets/audio/PurityJavaneseGamelan.mp3";
 import About from '../components/Wedding/About.vue'; // Import the About component
 import Address from '../components/Wedding/Address.vue'; // Import the Address component
 import Date from '../components/Wedding/Date.vue'; // Import the Date component
