@@ -1,7 +1,6 @@
 <template>
-  <!-- Wrapper utama untuk template root -->
   <div class="relative">
-    <!-- Bagian Background Gambar Jejak Sandal untuk Desktop (PC) -->
+    <!-- Background Gambar Jejak Sandal untuk Desktop (PC) -->
     <div class="hidden md:block fixed inset-0 -z-10 pointer-events-none">
       <img 
         src="@/assets/ornamen/jejak-sandal.png" 
@@ -10,7 +9,7 @@
       />
     </div>
 
-    <!-- Bagian Background Gambar Jejak Sandal untuk Handphone (HP) -->
+    <!-- Background Gambar Jejak Sandal untuk Handphone (HP) -->
     <div class="block md:hidden fixed inset-0 -z-10 pointer-events-none">
       <img 
         src="@/assets/ornamen/jejak-sandal-hp.png" 
@@ -19,69 +18,84 @@
       />
     </div>
 
-    <!-- Section 1: Pembukaan dan Buka Undangan -->
-    <div class="min-h-screen flex items-center justify-center bg-cover bg-center">
-      <!-- Konten Utama - Tombol Buka Undangan -->
+    <!-- Section 1: Pembukaan dan Buka Undangan dengan Animasi -->
+    <v-motion
+      :initial="{ opacity: 0, scale: 0.8 }"
+      :enter="{ opacity: 1, scale: 1 }"
+      transition="spring"
+      class="min-h-screen flex items-center justify-center bg-cover bg-center"
+    >
       <div class="text-center p-10 bg-white bg-opacity-70 rounded-lg shadow-lg z-10">
-        <div class="mb-8 flex justify-center">
+        <v-motion 
+          :initial="{ opacity: 0, y: -50 }"
+          :enter="{ opacity: 1, y: 0 }"
+          transition="{ delay: 0.2, duration: 0.5 }"
+          class="mb-8 flex justify-center"
+        >
           <img 
             src="@/assets/ornamen/gunungan.png" 
             alt="Gunungan" 
             class="w-2/3 h-auto rounded-lg" 
           />
-        </div>
-        <h1 class="text-4xl font-bold mb-4">Undangan Pernikahan</h1>
-        <h5 class="text-2xl font-bold mb-4">Dinna<Icon name="fxemoji:blackheartsuit" />Fendy</h5>
-        <h5 class="text-2xl font-bold mb-4">22 • 12 • 2024</h5>
+        </v-motion>
+        <h1 class="text-3xl font-bold mb-4">Undangan Pernikahan</h1>
+        <h5 class="text-2xl font-bold mb-4">Dinna <Icon name="fxemoji:blackheartsuit" /> Fendy</h5>
+        <h5 class="text-1xl font-bold mb-4">22 • 12 • 2024</h5>
         <p class="text-xl mb-6">Kepada Yth, <span class="font-bold">{{ recipientName }}</span></p>
-        <!-- Tombol Buka Undangan -->
-        <button 
-          @click="openInvitation" 
-          class="bg-[#C7A07A] text-white px-4 py-2 rounded-lg hover:bg-[#734128]"
+        
+        <!-- Tombol Buka Undangan dengan Animasi -->
+        <v-motion 
+          :initial="{ opacity: 0, scale: 0.9 }"
+          :enter="{ opacity: 1, scale: 1 }"
+          transition="{ delay: 0.4, duration: 0.3 }"
         >
-          Buka Undangan
-        </button>
+          <button 
+            @click="openInvitation" 
+            class="bg-[#C7A07A] text-white px-4 py-2 rounded-lg hover:bg-[#734128]"
+          >
+            Buka Undangan
+          </button>
+        </v-motion>
       </div>
-      <!-- Bubble Button for Play/Stop -->
-      <button @click="togglePlay" class="bubble-button">
+    </v-motion>
+
+    <!-- Audio Element -->
+    <audio ref="audio" :src="audioSrc" preload="auto"></audio>
+
+    <!-- Bubble Button for Play/Stop with Animasi -->
+    <v-motion
+      :initial="{ opacity: 0, scale: 0.8 }"
+      :enter="{ opacity: 1, scale: 1 }"
+      transition="{ delay: 0.5, duration: 0.3 }"
+      class="bubble-button"
+    >
+      <button @click="togglePlay">
         {{ isPlaying ? "Stop" : "Play" }}
       </button>
-      <audio ref="audio" :src="audioSrc"></audio>
-    </div>
+    </v-motion>
 
-    <!-- Section 2: Tentang Pengantin -->
-    <About />
-
-    <!-- Section 3: Tanggal Pernikahan -->
-    <Date />
-
-    <!-- Section 4: Lokasi Pernikahan -->
-    <Address />    
-
-    <!-- Section 5: Galeri Foto -->
-    <Gallery />
-
-    <!-- Section 6: Doa -->
-    <Doa />
-    
-    <!-- Section 7: Ucapan Terima Kasih -->
-    <ThankYou />
-    
-    <!-- Footer Section -->
-    <Footer />
-
+    <!-- Sections Content with Animasi -->
+    <v-motion v-if="invitationOpened" :initial="{ opacity: 0 }" :enter="{ opacity: 1 }" transition="{ duration: 0.5 }">
+      <About id="about-us" />
+      <Date />
+      <Address />
+      <Gallery />
+      <Doa />
+      <ThankYou />
+      <Footer />
+    </v-motion>
   </div>
 </template>
 
 <script>
 import audioFile from "@/assets/audio/PurityJavaneseGamelan.mp3";
-import About from '../components/Wedding/About.vue'; // Import the About component
-import Address from '../components/Wedding/Address.vue'; // Import the Address component
-import Date from '../components/Wedding/Date.vue'; // Import the Date component
-import Gallery from '../components/Wedding/Gallery.vue'; // Import the Gallery component
-import Doa from '../components/Wedding/Doa.vue'; // Import the Doa component
-import ThankYou from '../components/Wedding/ThankYou.vue'; // Import the ThankYou component
-import Footer from '../components/Wedding/Footer.vue'; // Import the Footer component
+import About from '../components/Wedding/About.vue';
+import Address from '../components/Wedding/Address.vue';
+import Date from '../components/Wedding/Date.vue';
+import Gallery from '../components/Wedding/Gallery.vue';
+import Doa from '../components/Wedding/Doa.vue';
+import ThankYou from '../components/Wedding/ThankYou.vue';
+import Footer from '../components/Wedding/Footer.vue';
 
 export default {
   components: {
@@ -97,32 +111,24 @@ export default {
     return {
       recipientName: '',
       audioSrc: audioFile,
-      googleMapsUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.7385220819967!2d106.87742173183104!3d-6.196892929221758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4bfae19c195%3A0x78be20a8eac2ec5f!2sGelanggang%20Remaja%20Pulogadung!5e0!3m2!1sen!2sid!4v1698384169637!5m2!1sen!2sid',
       invitationOpened: false,
-      isPlaying: false // Status untuk memantau apakah audio sedang dimainkan
-    }
+      isPlaying: false,
+    };
   },
-  
   mounted() {
-    // Ensure we're in a client environment
     if (process.client) {
       this.recipientName = this.$route.query.name || 'Guest';
-      // Allow scrolling by default on mobile
       if (!this.invitationOpened) {
-        document.body.classList.add('no-scroll'); // Add class to prevent scrolling
+        document.body.classList.add('no-scroll');
       }
     }
   },
-
   methods: {
     openInvitation() {
-      this.playMusic(); // Saat undangan dibuka, musik akan mulai diputar
       this.invitationOpened = true;
-      
-      // Ensure we're in a client environment
+      this.playMusic();
       if (process.client) {
-        document.body.classList.remove('no-scroll'); // Remove class to allow scrolling
-
+        document.body.classList.remove('no-scroll');
         const aboutSection = document.getElementById('about-us');
         if (aboutSection) {
           aboutSection.scrollIntoView({ behavior: 'smooth' });
@@ -130,7 +136,8 @@ export default {
       }
     },
     playMusic() {
-      this.$refs.audio.play()
+      const audio = this.$refs.audio;
+      audio.play()
         .then(() => {
           this.isPlaying = true;
         })
@@ -138,21 +145,15 @@ export default {
           console.error("Failed to play audio:", error);
         });
     },
-
     stopMusic() {
       this.$refs.audio.pause();
       this.isPlaying = false;
     },
-
     togglePlay() {
-      if (this.isPlaying) {
-        this.stopMusic();
-      } else {
-        this.playMusic();
-      }
+      this.isPlaying ? this.stopMusic() : this.playMusic();
     },
   },
-}
+};
 </script>
 
 <style scoped>
@@ -162,19 +163,8 @@ html, body {
   font-family: 'Arial', sans-serif;
 }
 
-/* Prevent scrolling with class */
 .no-scroll {
-  overflow: hidden; /* Prevent scrolling */
-}
-
-/* Media Queries for Responsive Text and Spacing */
-@media (max-width: 768px) {
-  #about-us h2 {
-    font-size: 2.5rem; /* Adjust heading size for smaller screens */
-  }
-  #about-us p {
-    font-size: 1.25rem; /* Adjust paragraph size for smaller screens */
-  }
+  overflow: hidden;
 }
 
 .bubble-button {
@@ -193,11 +183,10 @@ html, body {
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
-  z-index: 9999; /* Pastikan ini memiliki nilai lebih tinggi */
+  z-index: 9999;
 }
 
 .bubble-button:hover {
   background-color: #734128;
 }
-
 </style>
