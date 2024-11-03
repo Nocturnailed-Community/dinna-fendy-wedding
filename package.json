@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "@vueuse/motion": "^2.2.6",
+    "dotenv": "^16.4.5",
     "leaflet": "^1.9.4",
+    "mysql2": "^3.11.3",
     "nuxt": "^3.13.2",
     "nuxt-icon": "^1.0.0-beta.7",
     "pinia": "^2.2.4",
+    "quill": "^2.0.2",
     "vue": "latest",
     "vue-router": "latest"
   },

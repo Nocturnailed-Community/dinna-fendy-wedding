@@ -25,7 +25,7 @@
       transition="spring"
       class="min-h-screen flex items-center justify-center bg-cover bg-center"
     >
-      <div class="text-center p-10 bg-white bg-opacity-70 rounded-lg shadow-lg z-10">
+      <div class="text-center p-10 bg-white bg-opacity-70 rounded-lg shadow-lg z-10 max-w-3xl w-full">
         <v-motion 
           :initial="{ opacity: 0, y: -50 }"
           :enter="{ opacity: 1, y: 0 }"
@@ -80,6 +80,7 @@
       <Date />
       <Address />
       <Gallery />
+      <Wishes />
       <Doa />
       <ThankYou />
       <Footer />
@@ -93,6 +94,7 @@ import About from '../components/Wedding/About.vue';
 import Address from '../components/Wedding/Address.vue';
 import Date from '../components/Wedding/Date.vue';
 import Gallery from '../components/Wedding/Gallery.vue';
+import Wishes from '../components/Wedding/Wishes.vue';
 import Doa from '../components/Wedding/Doa.vue';
 import ThankYou from '../components/Wedding/ThankYou.vue';
 import Footer from '../components/Wedding/Footer.vue';
@@ -103,6 +105,7 @@ export default {
     Address,
     Date,
     Gallery,
+    Wishes,
     Doa,
     ThankYou,
     Footer,
