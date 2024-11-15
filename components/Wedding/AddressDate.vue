@@ -25,7 +25,7 @@
           target="_blank"
           class="inline-block text-white font-bold py-2 px-6 rounded-lg shadow-md transition"
           style="background-color: #6B4F2E; hover:bg-color: #5A3E25;">
-          Tambah ke Google Calendar
+          Simpan Tanggal
         </a>
 
         <hr class="border-t border-gray-300 my-6" />

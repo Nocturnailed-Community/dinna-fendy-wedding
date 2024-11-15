@@ -22,7 +22,7 @@
         ></textarea>
 
         <!-- Emoji Picker -->
-        <div class="relative mt-4">
+        <!-- <div class="relative mt-4">
           <input
             v-model="emojiSearch"
             @input="fetchEmojis"
@@ -41,7 +41,7 @@
               {{ emoji.character }}
             </button>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <button type="submit" class="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600">

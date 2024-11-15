@@ -2,7 +2,7 @@
   <div id="gallery" class="min-h-screen flex flex-col items-center justify-center p-10 relative">
     <div class="z-10 w-full max-w-5xl">
       <!-- Judul Galeri -->
-      <h2 class="text-3xl font-bold mb-8 text-center font-great-vibes">Pre Wedding</h2>
+      <h2 class="text-3xl font-bold mb-8 text-center font-great-vibes">Capture Moments</h2>
 
       <!-- Custom Image Gallery -->
       <div class="relative">
@@ -22,7 +22,7 @@
               <img
                 :src="image"
                 alt="Gallery Photo"
-                class="w-full h-auto object-cover"
+                class="w-full h-auto object-cover rounded-full"
                 loading="lazy"
               />
             </div>
@@ -44,7 +44,7 @@
         </div>
 
         <!-- Pagination Dots -->
-        <div class="absolute bottom-4 w-full text-center">
+        <!-- <div class="absolute bottom-4 w-full text-center">
           <span
             v-for="(image, index) in images"
             :key="index"
@@ -52,7 +52,7 @@
             class="inline-block mx-1 cursor-pointer w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-75"
             :class="{ 'bg-opacity-100': currentIndex === index }"
           ></span>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

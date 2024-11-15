@@ -8,8 +8,8 @@
         <p class="text-xl mb-8 text-center">Dengan memohon Rahmat dan Ridho Illahi, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a agar senantiasa diberikan kelancaran dan keberkahan.</p>
         
         <!-- Image Above Names -->
-        <div class="mb-8 flex justify-center">
-          <img src="@/assets/images/profile/profile.jpeg" alt="Profile" class="w-full h-auto rounded-lg" loading="lazy" />
+        <div class="mb-8 flex justify-center overflow-hidden relative w-full h-64">
+          <img src="@/assets/images/profile/profile.jpeg" alt="Profile" class="zoom-image w-full h-full object-cover rounded-full" loading="lazy" />
         </div>
         <div class="text-center z-10 mb-5">
             <p class="text-lg">"Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."</p>
@@ -58,5 +58,16 @@
 /* Terapkan font Dancing Script pada kelas font-dancing-script */
 .font-dancing-script {
   font-family: 'Dancing Script', cursive;
+}
+
+/* CSS untuk zoom dan crop gambar */
+.zoom-image {
+  object-fit: cover;        /* Mengisi elemen tanpa merusak proporsi gambar */
+  object-position: center;  /* Fokuskan pada bagian tengah gambar */
+  transition: transform 0.5s ease; /* Menambahkan transisi halus saat zoom */
+}
+
+.zoom-image:hover {
+  transform: scale(1.1); /* Zoom gambar saat hover */
 }
 </style>

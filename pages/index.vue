@@ -14,7 +14,7 @@
       <img 
         src="@/assets/ornamen/jejak-sandal-hp.png" 
         alt="Jejak Sandal HP" 
-        class="absolute object-cover w-full h-full opacity-50" 
+        class="absolute object-cover w-full h-full opacity-100" 
       />
     </div> -->
 
