@@ -22,8 +22,33 @@
       <img 
         src="@/assets/ornamen/jawa-klasik.png" 
         alt="Jawa Klasik" 
-        class="absolute object-cover w-full h-full opacity-50" 
+        class="absolute object-cover w-full h-full opacity-70" 
       />
+    </div>
+
+    <div class="block md:hidden fixed inset-0 -z-10 pointer-events-none">
+      <!-- Image Slider -->
+      <div class="overflow-hidden relative" style="max-width: 100%; width: 100%; height: 100%;">
+          <!-- Display Images -->
+          <div
+            class="flex transition-transform duration-500 ease-in-out"
+            :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+          >
+            <!-- Loop over images -->
+            <div
+              v-for="(image, index) in images"
+              :key="index"
+              class="w-full flex-shrink-0"
+            >
+              <img
+                :src="image"
+                alt="Gallery Photo"
+                class="absolute object-cover w-full h-full opacity-30"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
     </div>
 
     <!-- Section 1: Pembukaan dan Buka Undangan dengan Animasi -->
@@ -169,6 +194,36 @@ export default {
 };
 </script>
 
+<script setup>
+import { ref, onMounted } from 'vue';
+
+// Import images statically to ensure paths are resolved correctly
+import img1 from '@/assets/images/gallery/images (1).jpeg';
+import img2 from '@/assets/images/gallery/images (2).jpeg';
+import img3 from '@/assets/images/gallery/images (3).jpeg';
+import img4 from '@/assets/images/gallery/images (4).jpeg';
+import img5 from '@/assets/images/gallery/images (5).jpeg';
+import img6 from '@/assets/images/gallery/images (6).jpeg';
+import img7 from '@/assets/images/gallery/images (7).jpeg';
+import img8 from '@/assets/images/gallery/images (8).jpeg';
+import img9 from '@/assets/images/gallery/images (9).jpeg';
+
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+const currentIndex = ref(0);
+
+// Function to go to a specific slide
+const goToSlide = (index) => {
+  currentIndex.value = index;
+};
+
+// Automatically slide after 3 seconds
+onMounted(() => {
+  setInterval(() => {
+    currentIndex.value = (currentIndex.value + 1) % images.length;
+  }, 3000); // Change slide every 3 seconds
+});
+</script>
+
 <style scoped>
 html, body {
   margin: 0;
@@ -201,6 +256,50 @@ html, body {
 
 .bubble-button:hover {
   background-color: #734128;
+}
+
+/* Styling for the custom gallery */
+#gallery {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Flex display for the images to make them responsive */
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.flex img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Pagination dots */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.pagination span {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.6;
+}
+
+.pagination span.active {
+  background-color: #000;
+  opacity: 1;
 }
 
 /* Terapkan font Dancing Script pada kelas font-dancing-script */

@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
     public: {
+      EMOJIS_KEY: process.env.EMOJIS_KEY, // Pastikan variabel tersedia untuk client-side
       motion: {
         directives: {
           'pop-bottom': {
