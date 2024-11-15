@@ -19,37 +19,36 @@
     </div> -->
 
     <div class="block md:hidden fixed inset-0 -z-10 pointer-events-none">
-      <img 
-        src="@/assets/ornamen/jawa-klasik.png" 
-        alt="Jawa Klasik" 
-        class="absolute object-cover w-full h-full opacity-70" 
-      />
+  <!-- Background Image (Ornamen Jawa Klasik) -->
+  <img 
+    src="@/assets/ornamen/jawa-klasik.png" 
+    alt="Jawa Klasik" 
+    class="absolute object-cover w-full h-full opacity-70 z-0" 
+  />
+  
+  <!-- Image Slider -->
+  <div class="overflow-hidden relative w-full h-full">
+    <div
+      class="flex transition-transform duration-500 ease-in-out"
+      :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+    >
+      <!-- Loop over images -->
+      <div
+        v-for="(image, index) in images"
+        :key="index"
+        class="w-full flex-shrink-0"
+      >
+        <img
+          :src="image"
+          alt="Gallery Photo"
+          class="absolute object-cover w-full h-full opacity-30 z-10"
+          style="object-fit: cover; object-position: center; height: 100vh;"
+          loading="lazy"
+        />
+      </div>
     </div>
-
-    <div class="block md:hidden fixed inset-0 -z-10 pointer-events-none">
-      <!-- Image Slider -->
-      <div class="overflow-hidden relative" style="max-width: 100%; width: 100%; height: 100%;">
-          <!-- Display Images -->
-          <div
-            class="flex transition-transform duration-500 ease-in-out"
-            :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
-          >
-            <!-- Loop over images -->
-            <div
-              v-for="(image, index) in images"
-              :key="index"
-              class="w-full flex-shrink-0"
-            >
-              <img
-                :src="image"
-                alt="Gallery Photo"
-                class="absolute object-cover w-full h-full opacity-30"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-    </div>
+  </div>
+</div>
 
     <!-- Section 1: Pembukaan dan Buka Undangan dengan Animasi -->
     <v-motion
