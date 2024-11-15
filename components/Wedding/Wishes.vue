@@ -1,6 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col items-center py-10 px-4">
     <h1 class="text-3xl font-semibold text-gray-800 mb-8 font-great-vibes">Ucapan</h1>
+    <p class="text mb-8">Berikan Ucapan kepada mempelai.</p>
 
     <!-- Form to Add New Wish -->
     <form @submit.prevent="submitWish" class="w-full p-6 shadow rounded-lg space-y-4 mb-10 max-w-4xl">

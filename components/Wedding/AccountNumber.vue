@@ -3,7 +3,7 @@
   <div class="p-8 rounded-lg text-center max-w-lg w-full">
 
     <h1 class="text-3xl font-semibold text-gray-800 mb-8 font-great-vibes">Wedding Gift</h1>
-    <p class="text-xl mb-8">Terima kasih atas hadiah dan doa terbaik Anda!</p>
+    <p class="text mb-8">Terima kasih atas hadiah dan doa terbaik Anda!</p>
 
     <div class="flex justify-center items-center py-10">
 
