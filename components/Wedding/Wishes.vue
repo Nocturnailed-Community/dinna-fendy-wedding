@@ -82,7 +82,7 @@ const wishes = ref([])
 const currentPage = ref(1)
 const totalPages = ref(1)
 const limit = 5 // Number of wishes per page
-const emojis = ['💖', '🎉', '✨', '💍', '👰‍♀️', '🤵‍♂️'];
+const emojis = ['💖', '🎉', '🌹', '✨', '🎊', '💍'];
 const wishTextarea = ref(null)
 
 // Fetch existing wishes with pagination
