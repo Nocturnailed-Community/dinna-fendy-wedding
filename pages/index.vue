@@ -114,8 +114,8 @@
       <About id="about-us" />
       <AddressDate />
       <Gallery />
+      <AccountNumber />
       <Wishes />
-      <!-- <Doa /> -->
       <ThankYou />
       <Footer />
     </v-motion>
@@ -128,7 +128,7 @@ import About from '../components/Wedding/About.vue';
 import AddressDate from '../components/Wedding/AddressDate.vue';
 import Gallery from '../components/Wedding/Gallery.vue';
 import Wishes from '../components/Wedding/Wishes.vue';
-import Doa from '../components/Wedding/Doa.vue';
+import AccountNumber from '../components/Wedding/AccountNumber.vue';
 import ThankYou from '../components/Wedding/ThankYou.vue';
 import Footer from '../components/Wedding/Footer.vue';
 
@@ -138,7 +138,7 @@ export default {
     AddressDate,
     Gallery,
     Wishes,
-    Doa,
+    AccountNumber,
     ThankYou,
     Footer,
   },
