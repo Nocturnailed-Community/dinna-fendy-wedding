@@ -132,35 +132,40 @@ export default {
     }
   },
   methods: {
-    openInvitation() {
-      this.invitationOpened = true;
-      this.playMusic();
-      if (process.client) {
-        document.body.classList.remove('no-scroll');
+  openInvitation() {
+    this.invitationOpened = true;
+    this.playMusic();
+
+    if (process.client) {
+      document.body.classList.remove('no-scroll');
+      
+      // Gunakan Vue.nextTick untuk memastikan elemen dirender terlebih dahulu
+      this.$nextTick(() => {
         const aboutSection = document.getElementById('about-us');
         if (aboutSection) {
           aboutSection.scrollIntoView({ behavior: 'smooth' });
         }
-      }
-    },
-    playMusic() {
-      const audio = this.$refs.audio;
-      audio.play()
-        .then(() => {
-          this.isPlaying = true;
-        })
-        .catch((error) => {
-          console.error("Failed to play audio:", error);
-        });
-    },
-    stopMusic() {
-      this.$refs.audio.pause();
-      this.isPlaying = false;
-    },
-    togglePlay() {
-      this.isPlaying ? this.stopMusic() : this.playMusic();
-    },
+      });
+    }
   },
+  playMusic() {
+    const audio = this.$refs.audio;
+    audio.play()
+      .then(() => {
+        this.isPlaying = true;
+      })
+      .catch((error) => {
+        console.error("Failed to play audio:", error);
+      });
+  },
+  stopMusic() {
+    this.$refs.audio.pause();
+    this.isPlaying = false;
+  },
+  togglePlay() {
+    this.isPlaying ? this.stopMusic() : this.playMusic();
+  },
+},
 };
 </script>
 
