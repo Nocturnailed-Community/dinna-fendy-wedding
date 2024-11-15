@@ -101,9 +101,12 @@
       transition="{ delay: 0.5, duration: 0.3 }"
       class="bubble-button"
     >
-      <button @click="togglePlay">
-        {{ isPlaying ? "Stop" : "Play" }}
-      </button>
+    <button @click="togglePlay" class="flex items-center justify-center p-2">
+      <Icon 
+        :name="isPlaying ? 'material-symbols:pause-circle-outline' : 'material-symbols:play-circle-outline'" 
+        class="text-4xl" 
+      />
+    </button>
     </v-motion>
 
     <!-- Sections Content with Animasi -->
