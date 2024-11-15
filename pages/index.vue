@@ -215,11 +215,11 @@ const goToSlide = (index) => {
   currentIndex.value = index;
 };
 
-// Automatically slide after 3 seconds
+// Automatically slide after 5 seconds
 onMounted(() => {
   setInterval(() => {
     currentIndex.value = (currentIndex.value + 1) % images.length;
-  }, 3000); // Change slide every 3 seconds
+  }, 5000); // Change slide every 5 seconds
 });
 </script>
 
