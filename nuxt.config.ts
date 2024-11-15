@@ -31,9 +31,15 @@ export default defineNuxtConfig({
       }
     }
   },
+  googleFonts: {
+    families: {
+      'Great+Vibes': true,
+      'Playfair+Display': true,
+    },
+  },
   css: [
     '@/assets/css/tailwind.css', // Import Tailwind CSS globally
     'leaflet/dist/leaflet.css', // Import Leaflet CSS globally
   ],
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@vueuse/motion/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@vueuse/motion/nuxt', '@nuxtjs/google-fonts'],
 })
