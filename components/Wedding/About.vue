@@ -2,7 +2,7 @@
      <div id="about-us" class="min-h-screen flex items-center justify-center p-10 relative">
   <div class="z-10 max-w-3xl w-full">
     <!-- Card Container -->
-    <div class="bg-white shadow-lg rounded-lg p-8">
+    <div class="rounded-lg p-8">
       <h2 class="text-3xl font-bold mb-6 text-center">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
       <p class="text-xl mb-8 text-center">Assalamualaikum Warahmatullahi Wabarakatuh</p>
       <p class="text-xl mb-8 text-center">Dengan memohon Rahmat dan Ridho Illahi, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a agar senantiasa diberikan kelancaran dan keberkahan.</p>
@@ -11,6 +11,10 @@
       <div class="mb-8 flex justify-center">
         <img src="@/assets/images/profile/profile.jpeg" alt="Profile" class="w-full h-auto rounded-lg" loading="lazy" />
       </div>
+      <div class="text-center z-10 mb-5">
+          <p class="text-xl">"Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."</p>
+          <strong class="text-xl">Ar-Rum · Ayat 21</strong>
+        </div>
 
       <!-- Kontainer untuk nama pengantin dengan card -->
       <div class="flex flex-col md:flex-row items-center justify-center mb-8 space-y-4 md:space-y-0 md:space-x-4">

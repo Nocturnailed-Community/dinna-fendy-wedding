@@ -10,10 +10,18 @@
     </div>
 
     <!-- Background Gambar Jejak Sandal untuk Handphone (HP) -->
-    <div class="block md:hidden fixed inset-0 -z-10 pointer-events-none">
+    <!-- <div class="block md:hidden fixed inset-0 -z-10 pointer-events-none">
       <img 
         src="@/assets/ornamen/jejak-sandal-hp.png" 
         alt="Jejak Sandal HP" 
+        class="absolute object-cover w-full h-full opacity-50" 
+      />
+    </div> -->
+
+    <div class="block md:hidden fixed inset-0 -z-10 pointer-events-none">
+      <img 
+        src="@/assets/ornamen/jawa-klasik.png" 
+        alt="Jawa Klasik" 
         class="absolute object-cover w-full h-full opacity-50" 
       />
     </div>
@@ -25,7 +33,7 @@
       transition="spring"
       class="min-h-screen flex items-center justify-center bg-cover bg-center"
     >
-      <div class="text-center p-10 bg-white bg-opacity-70 rounded-lg shadow-lg z-10 max-w-3xl w-full">
+      <div class="text-center p-10 rounded-lg z-10 max-w-3xl w-full">
         <v-motion 
           :initial="{ opacity: 0, y: -50 }"
           :enter="{ opacity: 1, y: 0 }"
@@ -51,7 +59,7 @@
         >
           <button 
             @click="openInvitation" 
-            class="bg-[#C7A07A] text-white px-4 py-2 rounded-lg hover:bg-[#734128]"
+            class="bg-[#C7A07A] text-white px-4 py-2 rounded-lg hover:bg-[#734128] font-bold"
           >
             Buka Undangan
           </button>
@@ -77,11 +85,10 @@
     <!-- Sections Content with Animasi -->
     <v-motion v-if="invitationOpened" :initial="{ opacity: 0 }" :enter="{ opacity: 1 }" transition="{ duration: 0.5 }">
       <About id="about-us" />
-      <Date />
-      <Address />
+      <AddressDate />
       <Gallery />
       <Wishes />
-      <Doa />
+      <!-- <Doa /> -->
       <ThankYou />
       <Footer />
     </v-motion>
@@ -91,8 +98,7 @@
 <script>
 import audioFile from "@/assets/audio/PurityJavaneseGamelan.mp3";
 import About from '../components/Wedding/About.vue';
-import Address from '../components/Wedding/Address.vue';
-import Date from '../components/Wedding/Date.vue';
+import AddressDate from '../components/Wedding/AddressDate.vue';
 import Gallery from '../components/Wedding/Gallery.vue';
 import Wishes from '../components/Wedding/Wishes.vue';
 import Doa from '../components/Wedding/Doa.vue';
@@ -102,8 +108,7 @@ import Footer from '../components/Wedding/Footer.vue';
 export default {
   components: {
     About,
-    Address,
-    Date,
+    AddressDate,
     Gallery,
     Wishes,
     Doa,
