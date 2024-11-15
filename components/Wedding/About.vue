@@ -12,8 +12,8 @@
           <img src="@/assets/images/profile/profile.jpeg" alt="Profile" class="w-full h-auto rounded-lg" loading="lazy" />
         </div>
         <div class="text-center z-10 mb-5">
-            <p class="text-xl">"Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."</p>
-            <strong class="text-xl">Ar-Rum · Ayat 21</strong>
+            <p class="text-lg">"Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."</p>
+            <strong class="text-lg">Ar-Rum · Ayat 21</strong>
           </div>
 
         <!-- Kontainer untuk nama pengantin dengan card -->
@@ -21,7 +21,7 @@
           <!-- Nama Pengantin Wanita -->
           <div class="bg-brown-800 p-6 rounded-lg text-center shadow-md flex flex-col items-center justify-center w-full md:w-64 h-64">
             <div>
-              <h3 class="text-2xl font-bold mb-2 text-white">Dinna Fauziah</h3>
+              <h3 class="text-2xl font-bold mb-2 text-white font-dancing-script">Dinna Fauziah</h3>
               <p class="text-white">Putri dari Bapak Sardi dan Ibu Katiyem</p>
             </div>
           </div>
@@ -34,13 +34,13 @@
           <!-- Nama Pengantin Pria -->
           <div class="bg-brown-800 p-6 rounded-lg text-center shadow-md flex flex-col items-center justify-center w-full md:w-64 h-64">
             <div>
-              <h3 class="text-2xl font-bold mb-2 text-white">Syafei Dwiyoga Arifendy</h3>
+              <h3 class="text-2xl font-bold mb-2 text-white font-dancing-script">Syafei Dwiyoga Arifendy</h3>
               <p class="text-white">Putra dari Bapak Agus Triyono dan Ibu Suminah</p>
             </div>
           </div>
         </div>
 
-        <p class="text-lg text-center text-brown-800">Kami sangat menantikan kehadiran dan doa restu dari Anda pada hari bahagia kami.</p>
+        <!-- <p class="text-lg text-center text-brown-800">Kami sangat menantikan kehadiran dan doa restu dari Anda pada hari bahagia kami.</p> -->
       </div>
     </div>
   </div>
@@ -48,10 +48,15 @@
 
 <style scoped>
   /* Tailwind class untuk warna cokelat */
-  .bg-brown-800 {
-    background-color: #6B4F3A; /* Cokelat Tua */
-  }
-  .text-brown-800 {
-    color: #6B4F3A; /* Cokelat Tua */
-  }
+.bg-brown-800 {
+  background-color: #6B4F3A; /* Cokelat Tua */
+}
+.text-brown-800 {
+  color: #6B4F3A; /* Cokelat Tua */
+}
+
+/* Terapkan font Dancing Script pada kelas font-dancing-script */
+.font-dancing-script {
+  font-family: 'Dancing Script', cursive;
+}
 </style>

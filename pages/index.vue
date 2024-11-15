@@ -46,10 +46,10 @@
             class="w-2/3 h-auto rounded-lg" 
           />
         </v-motion>
-        <h1 class="text-3xl font-bold mb-4">Undangan Pernikahan</h1>
-        <h5 class="text-2xl font-bold mb-4">Dinna <Icon name="fxemoji:blackheartsuit" /> Fendy</h5>
-        <h5 class="text-1xl font-bold mb-4">22 • 12 • 2024</h5>
-        <p class="text-xl mb-6">Kepada Yth, <span class="font-bold">{{ recipientName }}</span></p>
+        <h1 class="text-3xl font-bold mb-4 font-great-vibes">Undangan Pernikahan</h1>
+        <h5 class="text-2xl font-bold mb-4 font-dancing-script">Dinna <Icon name="fxemoji:blackheartsuit" /> Fendy</h5>
+        <h5 class="text-1xl font-bold mb-4 font-dancing-script">22 • 12 • 2024</h5>
+        <p class="text-xl mb-6 font-dancing-script">Kepada Yth, <span class="font-bold font-dancing-script">{{ recipientName }}</span></p>
         
         <!-- Tombol Buka Undangan dengan Animasi -->
         <v-motion 
@@ -196,5 +196,15 @@ html, body {
 
 .bubble-button:hover {
   background-color: #734128;
+}
+
+/* Terapkan font Dancing Script pada kelas font-dancing-script */
+.font-dancing-script {
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Terapkan font Great Vibes pada kelas font-great-vibes */
+.font-great-vibes {
+  font-family: 'Great Vibes', cursive;
 }
 </style>

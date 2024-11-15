@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen flex flex-col items-center py-10 px-4">
-    <h1 class="text-3xl font-semibold text-gray-800 mb-8">Ucapan</h1>
+    <h1 class="text-3xl font-semibold text-gray-800 mb-8 font-great-vibes">Ucapan</h1>
     
     <!-- Form to Add New Wish -->
     <form @submit.prevent="submitWish" class="w-full p-6 shadow rounded-lg space-y-4 mb-10 max-w-4xl">
@@ -143,5 +143,15 @@ button {
 }
 button:hover {
   transform: scale(1.05);
+}
+
+/* Terapkan font Great Vibes pada kelas font-great-vibes */
+.font-great-vibes {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Terapkan font Dancing Script pada kelas font-dancing-script */
+.font-dancing-script {
+  font-family: 'Dancing Script', cursive;
 }
 </style>

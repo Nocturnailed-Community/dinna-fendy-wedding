@@ -1,11 +1,11 @@
 <template>
     <div id="wedding" class="min-h-screen flex items-center justify-center p-10">
       <div class="p-8 rounded-lg text-center border border-gray-200 max-w-4xl w-full">
-        <h1 class="text-3xl font-bold text-gray-800 mb-6">Undangan Pernikahan</h1>
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 font-great-vibes">Undangan Pernikahan</h1>
         
         <!-- Akad Section -->
         <div class="mb-6">
-          <h2 class="text-2xl font-bold text-gray-800">Akad Nikah</h2>
+          <h2 class="text-2xl font-bold text-gray-800 font-dancing-script">Akad Nikah</h2>
           <p class="text-xl text-gray-600">Minggu, 22 Desember 2024</p>
           <p class="text-lg font-bold text-gray-700">08.00 - 10.00 WIB</p>
         </div>
@@ -14,7 +14,7 @@
   
         <!-- Resepsi Section -->
         <div class="mb-6">
-          <h2 class="text-2xl font-bold text-gray-800">Resepsi Pernikahan</h2>
+          <h2 class="text-2xl font-bold text-gray-800 font-dancing-script">Resepsi Pernikahan</h2>
           <p class="text-xl text-gray-600">Minggu, 22 Desember 2024</p>
           <p class="text-lg font-bold text-gray-700">11.00 - 17.00 WIB</p>
         </div>
@@ -32,7 +32,7 @@
   
         <!-- Location Section with Map -->
         <div class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-800">Lokasi Acara</h2>
+          <h2 class="text-2xl font-bold text-gray-800 font-dancing-script">Lokasi Acara</h2>
           <p class="text-xl text-gray-600">Gedung Gelanggang Remaja Pulogadung</p>
           <p class="text-lg">Jl. Raya Pemuda No.17, Rawamangun, Kec. Pulogadung, Jakarta Timur, DKI Jakarta 13220</p>
         </div>
@@ -116,6 +116,16 @@
   /* Google Calendar Button */
   a:hover {
     background-color: #3182ce;
+  }
+
+  /* Terapkan font Great Vibes pada kelas font-great-vibes */
+  .font-great-vibes {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  /* Terapkan font Dancing Script pada kelas font-dancing-script */
+  .font-dancing-script {
+    font-family: 'Dancing Script', cursive;
   }
 </style>
   

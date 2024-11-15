@@ -2,7 +2,7 @@
   <div id="gallery" class="min-h-screen flex flex-col items-center justify-center p-10 relative">
     <div class="z-10 w-full max-w-5xl">
       <!-- Judul Galeri -->
-      <h2 class="text-3xl font-bold mb-8 text-center">Pre Wedding</h2>
+      <h2 class="text-3xl font-bold mb-8 text-center font-great-vibes">Pre Wedding</h2>
 
       <!-- Custom Image Gallery -->
       <div class="relative">
@@ -158,5 +158,15 @@ button:hover {
 .pagination span.active {
   background-color: #000;
   opacity: 1;
+}
+
+/* Terapkan font Great Vibes pada kelas font-great-vibes */
+.font-great-vibes {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Terapkan font Dancing Script pada kelas font-dancing-script */
+.font-dancing-script {
+  font-family: 'Dancing Script', cursive;
 }
 </style>
