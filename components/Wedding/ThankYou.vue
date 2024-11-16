@@ -1,5 +1,5 @@
 <template>
-  <div id="thank-you" class="min-h-screen flex items-center justify-center p-10 relative">
+  <div id="thank-you" class="min-h-screen flex items-center justify-center bg-cover bg-center p-10 relative">
     
     <!-- Main Content -->
     <Motion is="p" preset="slideVisibleTop">

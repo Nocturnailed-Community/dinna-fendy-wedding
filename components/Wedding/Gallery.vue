@@ -1,5 +1,5 @@
 <template>
-  <div id="gallery" class="min-h-screen flex flex-col items-center justify-center p-10">
+  <div id="gallery" class="min-h-screen flex items-center justify-center p-10">
     <div class="w-full max-w-5xl">
       <!-- Judul Galeri -->
       <Motion is="p" preset="slideVisibleTop">

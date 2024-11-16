@@ -284,7 +284,7 @@ onMounted(() => {
 #gallery {
   position: relative;
   min-height: 100vh;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -293,7 +293,7 @@ onMounted(() => {
 
 /* Flex display for the images to make them responsive */
 .flex {
-  display: flex;
+  /* display: flex; */
   flex-wrap: nowrap;
 }
 
