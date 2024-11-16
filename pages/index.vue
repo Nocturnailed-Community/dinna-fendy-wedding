@@ -7,6 +7,35 @@
         alt="Jejak Sandal" 
         class="absolute object-cover w-full h-full opacity-50" 
       />
+
+      <img 
+    src="@/assets/ornamen/jawa-klasik.png" 
+    alt="Jawa Klasik" 
+    class="absolute object-cover w-full h-full opacity-70 z-0" 
+  />
+
+      <!-- Image Slider -->
+  <div class="overflow-hidden relative w-full h-full">
+    <div
+      class="flex transition-transform duration-500 ease-in-out"
+      :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+    >
+      <!-- Loop over images -->
+      <div
+        v-for="(image, index) in images"
+        :key="index"
+        class="w-full flex-shrink-0"
+      >
+        <img
+          :src="image"
+          alt="Gallery Photo"
+          class="absolute object-cover w-full h-full opacity-30 z-10"
+          style="object-fit: cover; object-position: center; height: 100vh;"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
     </div>
 
     <!-- Background Gambar Jejak Sandal untuk Handphone (HP) -->
@@ -58,23 +87,26 @@
       class="min-h-screen flex items-center justify-center bg-cover bg-center"
     >
       <div class="text-center p-10 rounded-lg z-10 max-w-3xl w-full">
-        <v-motion 
-          :initial="{ opacity: 0, y: -50 }"
-          :enter="{ opacity: 1, y: 0 }"
-          transition="{ delay: 0.2, duration: 0.5 }"
-          class="mb-8 flex justify-center"
-        >
+        <Motion is="p" preset="slideVisibleTop">
+
           <img 
             src="@/assets/ornamen/gunungan.png" 
             alt="Gunungan" 
             class="w-2/3 h-auto rounded-lg" 
           />
-        </v-motion>
-        <h1 class="text-3xl font-bold mb-4 font-great-vibes">Undangan Pernikahan</h1>
-        <h5 class="text-2xl font-bold mb-4 font-dancing-script">Dinna <Icon name="fxemoji:blackheartsuit" /> Fendy</h5>
-        <h5 class="text-1xl font-bold mb-4 font-dancing-script">22 • 12 • 2024</h5>
-        <p class="text-xl mb-6 font-dancing-script">Kepada Yth, <span class="font-bold font-dancing-script">{{ recipientName }}</span></p>
-        
+        </Motion>
+        <Motion is="p" preset="slideVisibleLeft">
+          <h1 class="text-3xl font-bold mb-4 font-great-vibes">Undangan Pernikahan</h1>
+        </Motion>
+        <Motion is="p" preset="slideVisibleRight">
+          <h5 class="text-2xl font-bold mb-4 font-dancing-script">Dinna <Icon name="fxemoji:blackheartsuit" /> Fendy</h5>
+        </Motion>
+        <Motion is="p" preset="slideVisibleLeft">
+          <h5 class="text-1xl font-bold mb-4 font-dancing-script">22 • 12 • 2024</h5>
+        </Motion>
+        <Motion is="p" preset="slideVisibleRight">
+          <p class="text-xl mb-6 font-dancing-script">Kepada Yth, <span class="font-bold font-dancing-script">{{ recipientName }}</span></p>
+        </Motion>
         <!-- Tombol Buka Undangan dengan Animasi -->
         <v-motion 
           :initial="{ opacity: 0, scale: 0.9 }"

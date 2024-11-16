@@ -2,6 +2,7 @@
   <div id="thank-you" class="min-h-screen flex items-center justify-center p-10 relative">
 
     <!-- Main Content -->
+    <Motion is="p" preset="slideVisibleTop">
     <div class="shadow-lg rounded-lg p-8 z-20">
       <div class="text-center">
         <!-- <h2 class="text-3xl font-bold mb-4">Terima Kasih</h2> -->
@@ -10,6 +11,7 @@
         <!-- <p class="text-xl">Wassalamualaikum Warahmatullahi Wabarakatuh.</p> -->
       </div>
     </div>
+    </Motion>
   </div>
 </template>
 

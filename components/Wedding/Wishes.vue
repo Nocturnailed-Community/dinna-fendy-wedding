@@ -1,7 +1,11 @@
 <template>
   <div class="min-h-screen flex flex-col items-center py-10 px-4">
-    <h1 class="text-3xl font-semibold text-gray-800 mb-8 font-great-vibes">Ucapan</h1>
-    <p class="text mb-8">Berikan Ucapan kepada mempelai.</p>
+    <Motion is="p" preset="slideVisibleTop">
+      <h1 class="text-3xl font-semibold text-gray-800 mb-8 font-great-vibes">Ucapan</h1>
+    </Motion>
+    <Motion is="p" preset="slideVisibleTop">
+      <p class="text mb-8">Berikan Ucapan kepada mempelai.</p>
+    </Motion>
 
     <!-- Form to Add New Wish -->
     <form @submit.prevent="submitWish" class="w-full p-6 shadow rounded-lg space-y-4 mb-10 max-w-4xl">
@@ -27,6 +31,7 @@
         Kirim
       </button>
     </form>
+  
 
     <!-- Display List of Wishes -->
     <div v-if="wishes.length" class="w-full space-y-4 mb-10 max-w-4xl">
