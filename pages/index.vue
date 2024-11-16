@@ -5,18 +5,39 @@
       <img 
         src="@/assets/ornamen/jejak-sandal.png" 
         alt="Jejak Sandal" 
-        class="absolute object-cover w-full h-full opacity-50" 
-      />
-    </div>
-
-    <!-- Background Gambar Jejak Sandal untuk Handphone (HP) -->
-    <!-- <div class="block md:hidden fixed inset-0 -z-10 pointer-events-none">
-      <img 
-        src="@/assets/ornamen/jejak-sandal-hp.png" 
-        alt="Jejak Sandal HP" 
         class="absolute object-cover w-full h-full opacity-100" 
       />
-    </div> -->
+
+      <!-- Background Image (Ornamen Jawa Klasik) -->
+  <img 
+    src="@/assets/ornamen/jawa-klasik.png" 
+    alt="Jawa Klasik" 
+    class="absolute object-cover w-full h-full opacity-70 z-0" 
+  />
+  
+  <!-- Image Slider -->
+  <div class="overflow-hidden relative w-full h-full">
+    <div
+      class="flex transition-transform duration-500 ease-in-out"
+      :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+    >
+      <!-- Loop over images -->
+      <div
+        v-for="(image, index) in images"
+        :key="index"
+        class="w-full flex-shrink-0"
+      >
+        <img
+          :src="image"
+          alt="Gallery Photo"
+          class="absolute object-cover w-full h-full opacity-30 z-10"
+          style="object-fit: cover; object-position: center; height: 100vh;"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+    </div>
 
     <div class="block md:hidden fixed inset-0 -z-10 pointer-events-none">
   <!-- Background Image (Ornamen Jawa Klasik) -->
