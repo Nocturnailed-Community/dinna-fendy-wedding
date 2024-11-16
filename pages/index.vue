@@ -92,7 +92,7 @@
           />
         </v-motion>
         <h1 class="text-3xl font-bold mb-4 font-great-vibes">Undangan Pernikahan</h1>
-        <h5 class="text-2xl font-bold mb-4 font-dancing-script">Dinna <Icon name="fxemoji:blackheartsuit" /> Fendy</h5>
+        <h5 class="text-2xl font-bold mb-4 font-dancing-script">Dinna & Fendy</h5>
         <h5 class="text-1xl font-bold mb-4 font-dancing-script">22 • 12 • 2024</h5>
         <Countdown />
         <p class="text-xl mb-6 font-dancing-script">Kepada Yth, <span class="font-bold font-dancing-script">{{ recipientName }}</span></p>
