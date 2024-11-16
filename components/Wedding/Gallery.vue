@@ -6,7 +6,7 @@
         <h2 class="text-3xl font-bold mb-8 text-center font-great-vibes">Capture Moments</h2>
       </Motion>
       <!-- Display All Images in a Grid Layout -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
         <!-- Loop over images and display each one -->
         <div
           v-for="(image, index) in images"
@@ -15,14 +15,14 @@
           @click="openPreview(image)"
           class="cursor-pointer"
         >
-        <Motion is="p" preset="slideVisibleTop">
-          <img
-            :src="image"
-            alt="Gallery Photo"
-            class="w-full h-auto object-cover rounded-lg"
-            loading="lazy"
-          />
-        </Motion>
+          <Motion is="p" preset="slideVisibleTop">
+            <img
+              :src="image"
+              alt="Gallery Photo"
+              class="w-full h-auto object-cover rounded-lg"
+              loading="lazy"
+            />
+          </Motion>
         </div>
       </div>
     </div>

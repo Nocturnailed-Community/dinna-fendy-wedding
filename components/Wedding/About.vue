@@ -44,11 +44,10 @@
 
         <!-- Ikon Love -->
         <Motion is="p" preset="slideVisibleTop">
-          <div class="text-5xl text-black">
-            <Icon name="fxemoji:blackheartsuit" />
+          <div class="text-5xl text-black font-dancing-script">
+            &amp;
           </div>
         </Motion>
-
 
         <!-- Foto Pengantin Pria -->
         <Motion is="p" preset="slideVisibleRight">
@@ -62,8 +61,6 @@
           </div>
         </Motion>
       </div>
-
-     
     </div>
   </div>
 </template>
@@ -83,5 +80,59 @@
 /* Terapkan font Dancing Script pada kelas font-dancing-script */
 .font-dancing-script {
   font-family: 'Dancing Script', cursive;
+}
+
+/* Styling untuk Motion */
+.motion-container {
+  display: inline-block; /* Agar elemen tidak mempengaruhi tata letak */
+  transform-origin: center; /* Menjaga elemen tetap terpusat selama animasi */
+}
+
+/* Efek untuk motion-slideVisibleTop */
+.motion-slideVisibleTop {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px); /* Mulai dari bawah */
+    opacity: 0; /* Mulai dengan transparansi */
+  }
+  100% {
+    transform: translateY(0); /* Kembali ke posisi normal */
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+  }
+}
+
+/* Efek untuk motion-slideVisibleLeft */
+.motion-slideVisibleLeft {
+  animation: slideLeft 0.5s ease-out forwards;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-20px); /* Mulai dari kiri */
+    opacity: 0; /* Mulai dengan transparansi */
+  }
+  100% {
+    transform: translateX(0); /* Kembali ke posisi normal */
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+  }
+}
+
+/* Efek untuk motion-slideVisibleRight */
+.motion-slideVisibleRight {
+  animation: slideRight 0.5s ease-out forwards;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(20px); /* Mulai dari kanan */
+    opacity: 0; /* Mulai dengan transparansi */
+  }
+  100% {
+    transform: translateX(0); /* Kembali ke posisi normal */
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+  }
 }
 </style>

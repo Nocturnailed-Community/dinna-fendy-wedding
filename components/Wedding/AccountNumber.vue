@@ -4,20 +4,32 @@
       <Motion is="p" preset="slideVisibleTop">
         <h1 class="text-3xl font-semibold text-gray-800 mb-8 font-great-vibes">Wedding Gift</h1>
         <p class="text mb-8">Terima kasih atas hadiah dan doa terbaik Anda!</p>
-      </Motion> 
+      </Motion>
 
       <div class="flex flex-col items-center gap-4 py-10">
-        <!-- Card for Account Information -->
-        <div class="w-full bg-brown-800 shadow-lg rounded-lg p-6 text-white opacity-70">
+        <!-- Button to reveal the account information -->
+        <button
+          v-if="!isCardVisible"
+          @click="revealAccountInfo"
+          class="w-full py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-all"
+        >
+          Buka Kado Pernikahan
+        </button>
+
+        <!-- Card for Account Information (hidden initially) -->
+        <div
+          v-if="isCardVisible"
+          class="w-full bg-brown-800 shadow-lg rounded-lg p-6 text-white opacity-70 transition-opacity duration-1000"
+        >
           <!-- Card Header with Mandiri Logo -->
           <div class="flex items-center justify-end mb-6">
-            <img 
-              src="@/assets/ornamen/logo-bank-mandiri-putih.png" 
-              alt="Mandiri Logo" 
+            <img
+              src="@/assets/ornamen/logo-bank-mandiri-putih.png"
+              alt="Mandiri Logo"
               class="h-10 w-auto"
             />
           </div>
-      
+
           <!-- Account Information -->
           <div class="flex flex-col mb-6">
             <div class="flex justify-between mb-4">
@@ -38,8 +50,9 @@
           </div>
         </div>
 
-        <!-- Copy Button -->
-        <button 
+        <!-- Copy Button (hidden initially) -->
+        <button
+          v-if="isCardVisible"
           @click="copyToClipboard"
           class="w-full py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-all"
         >
@@ -56,6 +69,14 @@ import { ref } from 'vue'
 // Account data
 const accountNumber = ref('60010693954')
 const accountHolder = ref('Dinna Fauziah')
+
+// State to control visibility of account information
+const isCardVisible = ref(false)
+
+// Function to reveal account information and copy button
+const revealAccountInfo = () => {
+  isCardVisible.value = true
+}
 
 // Function to copy the account number to clipboard
 const copyToClipboard = () => {
@@ -107,5 +128,30 @@ button:hover {
 /* Terapkan font Great Vibes pada kelas font-great-vibes */
 .font-great-vibes {
   font-family: 'Great Vibes', cursive;
+}
+
+/* Ensuring the container does not shift */
+#number-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.max-w-lg {
+  max-width: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/* Animation for fading in */
+.transition-opacity {
+  transition: opacity 1s ease-in-out;
+}
+
+/* Optional: Fading effect */
+.opacity-70 {
+  opacity: 0.7;
 }
 </style>
