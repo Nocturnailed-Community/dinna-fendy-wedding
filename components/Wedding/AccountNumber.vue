@@ -100,6 +100,11 @@
   .mb-4 {
     margin-bottom: 16px;
   }
+
+  /* Terapkan font Great Vibes pada kelas font-great-vibes */
+  .font-great-vibes {
+    font-family: 'Great Vibes', cursive;
+  }
 </style>
 
   
