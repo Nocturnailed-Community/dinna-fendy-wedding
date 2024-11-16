@@ -63,7 +63,7 @@
           :src="image"
           alt="Gallery Photo"
           class="absolute object-cover w-full h-full opacity-30 z-10"
-          style="object-fit: cover; object-position: center; height: 100vh;"
+          style="object-fit: cover; object-position: center; height: 120vh;"
           loading="lazy"
         />
       </div>
@@ -251,12 +251,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-}
-
 .no-scroll {
   overflow: hidden;
 }
@@ -265,21 +259,23 @@ html, body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 60px;
-  height: 60px;
+  width: 50px; /* Set width */
+  height: 50px; /* Set height */
   background-color: #C7A07A;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
   z-index: 9999;
+  max-width: 50px; /* Ensure the width doesn't exceed the size */
+  max-height: 50px; /* Ensure the height doesn't exceed the size */
+  overflow: hidden; /* Prevent any content from spilling out */
 }
-
 .bubble-button:hover {
   background-color: #734128;
 }
