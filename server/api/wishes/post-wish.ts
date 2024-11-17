@@ -1,5 +1,3 @@
-// server/api/post-wish.ts
-
 import pool from '../../db';
 import { defineEventHandler, readBody } from 'h3';
 
