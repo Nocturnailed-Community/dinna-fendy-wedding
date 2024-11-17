@@ -34,7 +34,7 @@
         <!-- Foto Pengantin Wanita -->
         <Motion is="p" preset="slideVisibleLeft">
           <div class="relative w-50 h-50 overflow-hidden">
-            <img src="@/assets/images/profile/dinna.png" alt="Dinna Fauziah" class="zoom-image w-full h-full object-cover" loading="lazy" />
+            <img src="@/assets/images/profile/dinna.png" alt="Dinna Fauziah" class="zoom-image w-full h-full object-cover mb-5" loading="lazy" />
             <div class="text-black">
               <h3 class="text-2xl font-bold mb-2 font-dancing-script">Dinna Fauziah</h3>
               <p class="text-lg mb-6">Putri dari Bapak Sardi dan Ibu Katiyem</p>
@@ -52,7 +52,7 @@
         <!-- Foto Pengantin Pria -->
         <Motion is="p" preset="slideVisibleRight">
           <div class="relative w-50 h-50 overflow-hidden">
-            <img src="@/assets/images/profile/fendy.png" alt="Syafei Dwiyoga Arifendy" class="zoom-image w-full h-full object-cover" loading="lazy" />
+            <img src="@/assets/images/profile/fendy.png" alt="Syafei Dwiyoga Arifendy" class="zoom-image w-full h-full object-cover mb-5" loading="lazy" />
             <!-- Nama Pengantin -->
             <div class="text-black">
               <h3 class="text-2xl font-bold mb-2 font-dancing-script">Syafei Dwiyoga Arifendy</h3>

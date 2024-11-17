@@ -9,7 +9,7 @@
         <Motion is="p" preset="slideVisibleLeft">
           <div class="mb-6">
             <h2 class="text-2xl font-bold text-gray-800 font-dancing-script">Akad Nikah</h2>
-            <p class="text-xl text-gray-600">Minggu, 22 Desember 2024</p>
+            <p class="text-xl font-bold">Minggu, 22 Desember 2024</p>
             <p class="text-lg font-bold text-gray-700">08.00 - 10.00 WIB</p>
           </div>
         </Motion>
@@ -19,7 +19,7 @@
         <Motion is="p" preset="slideVisibleRight">
           <div class="mb-6">
             <h2 class="text-2xl font-bold text-gray-800 font-dancing-script">Resepsi Pernikahan</h2>
-            <p class="text-xl text-gray-600">Minggu, 22 Desember 2024</p>
+            <p class="text-xl font-bold">Minggu, 22 Desember 2024</p>
             <p class="text-lg font-bold text-gray-700">11.00 - 17.00 WIB</p>
           </div>
         </Motion>
