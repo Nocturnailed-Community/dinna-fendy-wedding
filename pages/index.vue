@@ -1,5 +1,5 @@
 <template>
-  <div class="relative center-content">
+  <div class="overflow-x-auto">
     <!-- Background Gambar Jejak Sandal untuk Desktop (PC) -->
     <div class="hidden md:block fixed inset-0 -z-10 pointer-events-none">
       <img
