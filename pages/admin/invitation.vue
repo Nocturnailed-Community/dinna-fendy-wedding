@@ -208,6 +208,7 @@
 >
   <div class="bg-white p-6 rounded shadow w-1/3">
     <h2 class="text-lg font-bold mb-4">Edit Template Pesan</h2>
+    <p class="text-sm mb-4 text-red-500">*Jangan hilangkan <strong>{name}</strong> untuk nama, dan <strong>{link}</strong> untuk generate link undangan, sesuaikan penempatan di deskripsi pesan.</p>
     <form @submit.prevent="saveMessageTemplate">
       <div class="mb-4">
         <label for="templateMessage" class="block mb-1">Template Pesan</label>
