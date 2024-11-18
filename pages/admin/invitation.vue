@@ -80,6 +80,13 @@
                 Kirim
               </button>
               <button
+                @click="cancelInvitation(invitation)"
+                :disabled="invitation.status === 'sent'"
+                class="bg-gray-500 text-white px-3 py-1 rounded disabled:opacity-50 m-3"
+              >
+                Ubah Status Kirim
+              </button>
+              <button
                 @click="openModal(invitation)"
                 class="bg-yellow-500 text-white px-3 py-1 rounded m-3"
               >
@@ -387,6 +394,34 @@
     });
 
     alert(`Undangan untuk ${invitation.name} berhasil dikirim melalui WhatsApp!`);
+    fetchInvitations(); // Memperbarui data undangan di UI
+  } catch (error) {
+    console.error(error);
+    alert("Gagal mengirim undangan. Silakan coba lagi.");
+  }
+};
+
+const cancelInvitation = async (invitation) => {
+  // Tampilkan konfirmasi sebelum mengirim
+  const confirmation = confirm(
+    `Apakah Anda yakin ingin ubah status undangan kepada ${invitation.name}?`
+  );
+  if (!confirmation) {
+    return; // Batalkan proses jika pengguna memilih "Tidak"
+  }
+
+  try {
+    // Ubah status undangan menjadi 1 (terkirim)
+    await $fetch(`/api/invitations/put-invitation?id=${invitation.id}`, {
+      method: "PUT",
+      body: {
+        name: invitation.name,
+        number: invitation.number,
+        status: 0,
+      },
+    });
+
+    alert(`Undangan untuk ${invitation.name} berhasil ubah status!`);
     fetchInvitations(); // Memperbarui data undangan di UI
   } catch (error) {
     console.error(error);
