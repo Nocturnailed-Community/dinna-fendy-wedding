@@ -17,7 +17,8 @@ export default defineEventHandler(async (event) => {
       SELECT id, name, number, status 
       FROM invitations 
       WHERE (name LIKE ? OR number LIKE ?) 
-      ${status !== null ? "AND status = ?" : ""} 
+      ${status !== null ? "AND status = ?" : ""}
+      ORDER BY id DESC 
       LIMIT ? OFFSET ?
       `,
       status !== null ? [search, search, status, limit, offset] : [search, search, limit, offset]

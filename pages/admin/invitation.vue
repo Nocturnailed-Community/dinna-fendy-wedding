@@ -1,42 +1,80 @@
 <template>
     <div class="p-4">
       <h1 class="text-2xl font-bold mb-4">Daftar Undangan</h1>
-  
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+  <!-- Tombol Edit Template -->
+  <button
+    @click="openTemplateModal"
+    class="bg-blue-500 text-white px-3 py-2 rounded w-full"
+  >
+    Edit Template Pesan
+  </button>
+
+  <!-- Input File CSV, Tombol Upload, dan Link Template -->
+  <div class="flex flex-col gap-4">
+    <!-- Input File CSV -->
+    <input
+      type="file"
+      id="csvInput"
+      accept=".csv"
+      class="bg-gray-100 border border-gray-300 rounded px-3 py-2 w-full"
+    />
+
+    <!-- Tombol Upload CSV -->
+    <button
+      @click="saveMultipleInvitationWithCSV()"
+      class="bg-green-500 text-white px-3 py-2 rounded w-full"
+    >
+      Upload Undangan (CSV)
+    </button>
+
+    <!-- Link ke Google Spreadsheet -->
+    <a
+      href="https://docs.google.com/spreadsheets/d/1v6sTfwW4iTtAEda8mtOb1anR081PGYOs3NgztK60Nvk/edit?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-blue-500 underline text-sm"
+    >
+      Download Template CSV
+    </a>
+  </div>
+
+  <!-- Tombol Tambah Banyak Undangan dan Tambah Undangan -->
+  <div class="flex flex-col gap-4">
+    <!-- Tombol Tambah Banyak Undangan -->
+    <button
+      @click="openModalMultiple()"
+      class="bg-green-500 text-white px-3 py-2 rounded w-full"
+    >
+      Tambah Banyak Undangan
+    </button>
+
+    <!-- Tombol Tambah Undangan -->
+    <button
+      @click="openModal()"
+      class="bg-green-500 text-white px-3 py-2 rounded w-full"
+    >
+      Tambah Undangan
+    </button>
+  </div>
+</div>
+
       <!-- Search and Settings -->
       <div class="flex justify-between items-center mb-4">
+        <select v-model="limit" @change="fetchInvitations" class="border rounded px-3 py-1">
+          <option :value="5">5</option>
+          <option :value="10">10</option>
+          <option :value="20">20</option>
+        </select>
         <input
           v-model="search"
           @input="fetchInvitations"
           type="text"
           placeholder="Cari nama..."
           class="border rounded px-3 py-1 w-1/3"
-        />
-        <select v-model="limit" @change="fetchInvitations" class="border rounded px-3 py-1">
-          <option :value="5">5</option>
-          <option :value="10">10</option>
-          <option :value="20">20</option>
-        </select>
-        <!-- Tombol Edit Template -->
-        <button
-        @click="openTemplateModal"
-        class="bg-blue-500 text-white px-3 py-1 rounded"
-        >
-        Edit Template Pesan
-        </button>
-        <button
-          @click="openModalMultiple()"
-          class="bg-green-500 text-white px-3 py-1 rounded"
-        >
-          Tambah Banyak Undangan
-        </button>
-        <button
-          @click="openModal()"
-          class="bg-green-500 text-white px-3 py-1 rounded"
-        >
-          Tambah Undangan
-        </button>
+        />    
       </div>
-  
+
       <!-- Table -->
       <table class="table-auto w-full border-collapse border border-gray-200">
         <thead>
@@ -135,6 +173,7 @@
                 id="name"
                 required
                 class="border rounded px-3 py-1 w-full"
+                placeholder="Masukkan Nama"
               />
             </div>
             <div class="mb-4">
@@ -145,6 +184,7 @@
                 id="number"
                 required
                 class="border rounded px-3 py-1 w-full"
+                placeholder="Masukkan No. WhatsApp"
               />
             </div>
             <div class="flex justify-end">
@@ -262,6 +302,61 @@
     invitations.value = data;
     pagination.value = pag;
   };
+
+  const saveMultipleInvitationWithCSV = async () => {
+    const fileInput = document.getElementById("csvInput"); // Ambil elemen input file
+    const file = fileInput.files[0]; // Ambil file pertama yang diunggah
+
+    if (!file) {
+      alert("Please upload a CSV file.");
+      return;
+    }
+
+    try {
+      const text = await readFileAsText(file); // Baca file sebagai teks
+      const invitations = parseCSV(text); // Parse teks CSV menjadi objek
+
+      if (invitations.length === 0) {
+        alert("The uploaded CSV file is empty or invalid.");
+        return;
+      }
+
+      await useFetch("/api/invitations/post-multiple-invitation", {
+        method: "POST",
+        body: invitations,
+      });
+
+      alert("Invitations successfully submitted!");
+      closeModalMultiple();
+      fetchInvitations();
+    } catch (error) {
+      console.error("Failed to save invitations:", error);
+      alert("An error occurred while saving invitations. Please try again.");
+    } finally {
+      closeModalMultiple();
+    }
+  };
+
+  // Fungsi untuk membaca file sebagai teks
+  const readFileAsText = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (event) => resolve(event.target.result);
+      reader.onerror = (error) => reject(error);
+      reader.readAsText(file);
+    });
+  };
+
+  // Fungsi untuk mem-parsing CSV menjadi array objek
+  const parseCSV = (text) => {
+    const lines = text.split("\n");
+    return lines
+      .map((line) => {
+        const [name, number] = line.trim().split(","); // Asumsikan data dipisahkan dengan koma
+        return { name: name?.trim(), number: number?.trim() };
+      })
+      .filter((entry) => entry.name && entry.number); // Filter data yang valid
+  };
   
   const saveInvitation = async () => {
     if (modalData.value.id) {
@@ -280,35 +375,36 @@
     closeModal();
     fetchInvitations();
   };
+
   const saveMultipleInvitation = async () => {
-  const invitations = bulkInput.value
-    .split("\n") // Split input by new lines
-    .map((line) => {
-      const [name, number] = line.trim().split(","); // Split by comma
-      return { name, number };
-    })
-    .filter((entry) => entry.name && entry.number); // Filter out invalid entries
+    const invitations = bulkInput.value
+      .split("\n") // Split input by new lines
+      .map((line) => {
+        const [name, number] = line.trim().split(","); // Split by comma
+        return { name, number };
+      })
+      .filter((entry) => entry.name && entry.number); // Filter out invalid entries
 
-  if (invitations.length === 0) {
-    alert("Please provide valid input.");
-    return;
-  }
+    if (invitations.length === 0) {
+      alert("Please provide valid input.");
+      return;
+    }
 
-  try {
-    await useFetch("/api/invitations/post-multiple-invitation", {
-      method: "POST",
-      body: invitations,
-    });
-    alert("Invitations successfully submitted!"); // Notify user of success
-    closeModalMultiple(); // Close the modal
-    fetchInvitations(); // Refresh invitation data
-  } catch (error) {
-    console.error("Failed to save invitations:", error);
-    alert("An error occurred while saving invitations. Please try again."); // Notify user of failure
-  } finally {
-    closeModalMultiple(); // Ensure modal closes regardless of success or error
-  }
-};
+    try {
+      await useFetch("/api/invitations/post-multiple-invitation", {
+        method: "POST",
+        body: invitations,
+      });
+      alert("Invitations successfully submitted!"); // Notify user of success
+      closeModalMultiple(); // Close the modal
+      fetchInvitations(); // Refresh invitation data
+    } catch (error) {
+      console.error("Failed to save invitations:", error);
+      alert("An error occurred while saving invitations. Please try again."); // Notify user of failure
+    } finally {
+      closeModalMultiple(); // Ensure modal closes regardless of success or error
+    }
+  };
 
   const deleteInvitation = async (id) => {
     // Tampilkan konfirmasi sebelum menghapus
