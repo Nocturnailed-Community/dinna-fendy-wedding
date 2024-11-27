@@ -77,6 +77,7 @@
       </div>
 
       <!-- Table -->
+      <div class="overflow-x-auto">
       <table class="table-auto w-full border-collapse border border-gray-200">
         <thead>
           <tr>
@@ -141,6 +142,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
   
       <!-- Pagination -->
       <div class="mt-4 flex justify-between items-center">
