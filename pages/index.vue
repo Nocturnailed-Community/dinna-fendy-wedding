@@ -155,6 +155,7 @@
       <About id="about-us" />
       <AddressDate />
       <Gallery />
+      <ConfirmAttendance :recipientName="recipientName" />
       <AccountNumber />
       <Wishes />
       <ThankYou />
@@ -171,6 +172,7 @@ import Countdown from "../components/Wedding/Countdown.vue";
 import Gallery from "../components/Wedding/Gallery.vue";
 import Wishes from "../components/Wedding/Wishes.vue";
 import AccountNumber from "../components/Wedding/AccountNumber.vue";
+import ConfirmAttendance from "../components/Wedding/ConfirmAttendance.vue";
 import ThankYou from "../components/Wedding/ThankYou.vue";
 import Footer from "../components/Wedding/Footer.vue";
 
@@ -181,6 +183,7 @@ export default {
     Countdown,
     Gallery,
     Wishes,
+    ConfirmAttendance,
     AccountNumber,
     ThankYou,
     Footer,

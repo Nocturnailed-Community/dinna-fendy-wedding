@@ -1,5 +1,5 @@
 <template>
-    <div class="p-4">
+    <div class="flex flex-col min-h-screen p-4">
       <Navbar />
       <!-- <h1 class="text-2xl font-bold mb-4">Daftar Undangan</h1> -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
@@ -82,7 +82,7 @@
           <tr>
             <th class="border px-4 py-2">Nama</th>
             <th class="border px-4 py-2">No. WhatsApp</th>
-            <th class="border px-4 py-2">Status</th>
+            <th class="border px-4 py-2">Terkirim</th>
             <th class="border px-4 py-2">Link</th>
             <th class="border px-4 py-2">Aksi</th>
           </tr>
@@ -98,7 +98,7 @@
                   invitation.status === 1 ? 'bg-green-500' : 'bg-gray-500' 
                 ]"
               >
-                {{ invitation.status === 1 ? 'Terkirim' : 'Belum Terkirim' }}
+                {{ invitation.status === 1 ? 'Sudah' : 'Belum' }}
               </span>
             </td>
             <td class="border px-4 py-2">
@@ -277,13 +277,14 @@
     </form>
   </div>
 </div>
-
+    <Footer />
     </div>
 </template>
   
 <script setup>
   import { ref, onMounted } from "vue";
   import Navbar from '~/components/Admin/Navbar/Navbar.vue';
+  import Footer from '~/components/Admin/Footer/Footer.vue';
 
   const invitations = ref([]);
   const page = ref(1);

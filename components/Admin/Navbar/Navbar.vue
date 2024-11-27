@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16 items-center">
           <!-- Logo -->
           <div class="flex-shrink-0 text-xl font-bold">
-            <NuxtLink to="/" class="text-white hover:text-gray-300">Moon Wedding</NuxtLink>
+            <NuxtLink to="/" class="text-white hover:text-gray-300">Dinna & Fendy</NuxtLink>
           </div>
   
           <!-- Menu for larger screens -->
@@ -31,11 +31,18 @@
               Presensi
             </NuxtLink>
             <NuxtLink
-              to="/admin/profile"
+              to="/admin/wishes"
               class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
-              :class="{ 'bg-gray-900': $route.path === '/admin/profile' }"
+              :class="{ 'bg-gray-900': $route.path === '/admin/wishes' }"
             >
-              Profil
+              Ucapan
+            </NuxtLink>
+            <NuxtLink
+              to="/logout"
+              class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
+              :class="{ 'bg-gray-900': $route.path === '/logout' }"
+            >
+              Logout
             </NuxtLink>
           </div>
   
@@ -92,11 +99,18 @@
             Presensi
           </NuxtLink>
           <NuxtLink
-            to="/admin/profile"
+            to="/admin/wishes"
             class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
-            :class="{ 'bg-gray-900': $route.path === '/admin/profile' }"
+            :class="{ 'bg-gray-900': $route.path === '/admin/wishes' }"
           >
-            Profil
+            Ucapan
+          </NuxtLink>
+          <NuxtLink
+            to="/logout"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
+            :class="{ 'bg-gray-900': $route.path === '/logout' }"
+          >
+            Logout
           </NuxtLink>
         </div>
       </div>
