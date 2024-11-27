@@ -1,6 +1,7 @@
 <template>
     <div class="p-4">
-      <h1 class="text-2xl font-bold mb-4">Daftar Undangan</h1>
+      <Navbar />
+      <!-- <h1 class="text-2xl font-bold mb-4">Daftar Undangan</h1> -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
   <!-- Tombol Edit Template -->
   <button
@@ -282,7 +283,8 @@
   
 <script setup>
   import { ref, onMounted } from "vue";
-  
+  import Navbar from '~/components/Admin/Navbar/Navbar.vue';
+
   const invitations = ref([]);
   const page = ref(1);
   const limit = ref(10);

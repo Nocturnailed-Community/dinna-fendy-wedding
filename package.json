@@ -13,6 +13,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@vueup/vue-quill": "^1.2.0",
     "@vueuse/motion": "^2.2.6",
+    "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
     "leaflet": "^1.9.4",
     "mysql2": "^3.11.3",
