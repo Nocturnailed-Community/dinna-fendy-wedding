@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-gray-800 text-white text-center py-4">
+    <footer class="bg-gray-800 text-white text-center py-4 mt-4">
       <p class="text-sm">© 2024 | Dinna & Fendy Wedding. All rights reserved.</p>
       <p class="text-sm">
         Created and Designed by 
