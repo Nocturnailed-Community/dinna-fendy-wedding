@@ -8,7 +8,7 @@
     </Motion>
 
     <!-- Form to Add New Wish -->
-    <form @submit.prevent="submitWish" class="w-full p-6 shadow rounded-lg space-y-4 mb-10 max-w-4xl">
+    <form @submit.prevent="askConfirmation" class="w-full p-6 shadow rounded-lg space-y-4 mb-10 max-w-4xl">
       <input
         v-model="name"
         type="text"
@@ -76,7 +76,6 @@ const wishes = ref([])
 const currentPage = ref(1)
 const totalPages = ref(1)
 const limit = 5 // Number of wishes per page
-const wishTextarea = ref(null)
 
 // Fetch existing wishes with pagination
 const fetchWishes = async (page = 1) => {
@@ -90,6 +89,13 @@ const fetchWishes = async (page = 1) => {
 }
 
 onMounted(() => fetchWishes(currentPage.value))
+
+// Function to ask confirmation before submitting a wish
+const askConfirmation = () => {
+  if (confirm("Apakah Anda yakin ingin mengirim ucapan ini?")) {
+    submitWish()
+  }
+}
 
 // Function to submit a new wish
 const submitWish = async () => {
