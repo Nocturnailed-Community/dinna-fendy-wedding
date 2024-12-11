@@ -17,6 +17,13 @@
               Dashboard
             </NuxtLink>
             <NuxtLink
+              to="/admin/users"
+              class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
+              :class="{ 'bg-gray-900': $route.path === '/admin/users' }"
+            >
+              Pengguna
+            </NuxtLink>
+            <NuxtLink
               to="/admin/invitation"
               class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
               :class="{ 'bg-gray-900': $route.path === '/admin/invitation' }"

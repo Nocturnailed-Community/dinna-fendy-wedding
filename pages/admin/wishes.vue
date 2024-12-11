@@ -67,7 +67,8 @@
   const search = ref("");
   const pagination = ref({ totalPages: 1 });
 
-  const fetchWishes = async () => {
+  const fetchWishes = async () => {  
+
     const { data, pagination: pag } = await $fetch("/api/wishes/get-admin-wishes", {
       params: { page: page.value, limit: limit.value, search: search.value },
     });
