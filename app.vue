@@ -14,7 +14,7 @@ onMounted(() => {
 });
 
 useHead({
-  title: "Dinna & Fendy's Wedding Invitation",
+  title: "Dinna & Fendy's Wedding Invitation by Nocturnailed",
   meta: [
     {
       property: "og:title",
@@ -26,11 +26,13 @@ useHead({
     },
     {
       property: "og:image",
-      content: `${baseUrl.value}/og-image.jpeg`, // URL dinamis
+      content: `https://dinna-fendy.nocturnailed.com/og-image.jpeg`, // URL dinamis
+      // content: `${baseUrl.value}/og-image.jpeg`, // URL dinamis
     },
     {
       property: "og:url",
-      content: `${baseUrl.value}/`, // URL dinamis
+      content: `https://dinna-fendy.nocturnailed.com/`, // URL dinamis
+      // content: `${baseUrl.value}/`, // URL dinamis
     },
   ],
 });
