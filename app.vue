@@ -11,7 +11,7 @@ import { useRuntimeConfig } from "#app";
 const config = useRuntimeConfig();
 
 // Data event
-const eventTitle = "Dinna & Fendy's Wedding Invitation by Nocturnailed";
+const eventTitle = "Dinna & Fendy's Wedding Invitation";
 const eventDescription =
   "Join us to celebrate the wedding of Dinna and Fendy on December 22th, 2024. Tap to view more details.";
 
