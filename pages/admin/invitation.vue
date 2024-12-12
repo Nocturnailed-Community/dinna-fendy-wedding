@@ -473,7 +473,16 @@
       .replace("{name}", invitation.name)
       .replace("{link}", invitation.link);
 
-    const phoneNumber = `+${invitation.number}`;
+    // Lakukan pengecekan pada nomor WhatsApp
+    let phoneNumber = invitation.number.trim();
+    if (phoneNumber.startsWith("0")) {
+      // Ganti "0" di awal nomor dengan "62"
+      phoneNumber = `62${phoneNumber.slice(1)}`;
+    } else if (!phoneNumber.startsWith("62")) {
+      alert("Nomor WhatsApp tidak valid. Pastikan nomor dimulai dengan 0 atau 62.");
+      return;
+    }
+    
     const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
     // Buka tautan WhatsApp di tab baru
