@@ -1,53 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  app: {
-    head: {
-      title: "Dinna & Fendy's Wedding Invitation by Nocturnailed",
-      meta: [
-        {
-          hid: "og:title",
-          property: "og:title",
-          content: "Dinna & Fendy's Wedding Invitation by Nocturnailed",
-        },
-        {
-          hid: "og:description",
-          property: "og:description",
-          content:
-            "Join us to celebrate the wedding of Dinna and Fendy on December 22th, 2024. Tap to view more details.",
-        },
-        {
-          hid: "og:image",
-          property: "og:image",
-          content: "https://dinna-fendy.nocturnailed.com/og-image.jpeg",
-        },
-        {
-          hid: "og:image:width",
-          property: "og:image:width",
-          content: "1200", // Lebar gambar
-        },
-        {
-          hid: "og:image:height",
-          property: "og:image:height",
-          content: "630", // Tinggi gambar
-        },
-        {
-          hid: "og:url",
-          property: "og:url",
-          content: "https://dinna-fendy.nocturnailed.com/",
-        },
-        {
-          hid: "og:image:type",
-          property: "og:image:type",
-          content: "image/jpeg",
-        },
-        {
-          hid: "twitter:card",
-          name: "twitter:card",
-          content: "summary_large_image",
-        },
-      ],
-    },
-  },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   postcss: {
