@@ -21,6 +21,16 @@ export default defineNuxtConfig({
           content: "https://dinna-fendy.nocturnailed.com/og-image.jpeg",
         },
         {
+          hid: "og:image:width",
+          property: "og:image:width",
+          content: "1200", // Lebar gambar
+        },
+        {
+          hid: "og:image:height",
+          property: "og:image:height",
+          content: "630", // Tinggi gambar
+        },
+        {
           hid: "og:url",
           property: "og:url",
           content: "https://dinna-fendy.nocturnailed.com/",
