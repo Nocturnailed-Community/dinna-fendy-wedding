@@ -9,7 +9,7 @@
       />
       <meta
         property="og:image"
-        :content="`${baseUrl}/og-image.jpg`"
+        :content="`${baseUrl}/og-image.jpeg`"
       />
       <meta
         property="og:url"
