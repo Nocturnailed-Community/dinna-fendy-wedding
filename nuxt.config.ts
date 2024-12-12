@@ -18,12 +18,17 @@ export default defineNuxtConfig({
         {
           hid: "og:image",
           property: "og:image",
-          content: "https://dinna-fendy.nocturnailed.com/og-image.jpg",
+          content: "https://dinna-fendy.nocturnailed.com/og-image.jpeg",
         },
         {
           hid: "og:url",
           property: "og:url",
-          content: process.env.NODE_ENV === "https://dinna-fendy.nocturnailed.com/",
+          content: "https://dinna-fendy.nocturnailed.com/",
+        },
+        {
+          hid: "og:image:type",
+          property: "og:image:type",
+          content: "image/jpeg",
         },
         {
           hid: "twitter:card",
